@@ -1,0 +1,37 @@
+$space-large: 2.5em;
+
+.page-title {
+	color: brown;
+  margin-top: $space-large;
+  margin-bottom: $space-large;
+}
+
+input[type=search] {
+  box-shadow: none;
+}
+
+.button{
+  background-color:brown;
+}
+
+.button:hover{
+	background-color: red;
+}
+
+.button.hollow{
+	color:red;
+	border-color: red;
+}
+
+.button.hollow:hover{
+	color:brown;
+	border-color: brown;
+}
+
+a{
+	color: red;
+}
+
+a:hover{
+	color: brown;
+}
