@@ -1,37 +1,218 @@
-$space-large: 2.5em;
+//colors
+$red: red;
+$color_mexican_red_approx: brown;
+$color_mercury_approx: #e6e6e6;
+$color_romance_approx: #fefefe;
+$color_cod_gray_approx: #0a0a0a;
+$white: #fff;
+$color_apricot_approx: #ee8176;
+$color_stack_approx: #8a8a8a;
+$color_mountain_mist_approx: #999;
 
-.page-title {
-	color: brown;
+
+ul{
+  margin-left: 0;
+}
+//@extend-elements
+//original selectors
+.list-group-item.disabled, .list-group-item.disabled:hover, .list-group-item.disabled:focus, .list-group-item[disabled], .list-group-item[disabled]:hover, .list-group-item[disabled]:focus
+%extend_1 {
+  color: $color_stack_approx;
+  cursor: not-allowed;
+  background-color: $color_romance_approx;
+}
+
+
+.subheader {
+  color: $color_mexican_red_approx;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+input[type=search] {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none;
+}
+.button {
+  background-color: $color_mexican_red_approx;
+  &:hover {
+    background-color: $red;
+  }
+  &.hollow {
+    color: $red;
+    border-color: $red;
+    &:hover {
+      color: $color_mexican_red_approx;
+      border-color: $color_mexican_red_approx;
+    }
+  }
+}
+a {
+  color: $red;
+  &:hover {
+    color: $color_mexican_red_approx;
+  }
+}
+.main-title {
+  letter-spacing: 5px;
+  word-spacing: 1px;
+  font-weight: 200;
+}
+.list-group-item {
+  margin-left: 0em;
+  padding: 1rem;
+  list-style: none;
+  border: 1px solid $color_mercury_approx;
+  &.active {
+    color: $color_romance_approx;
+    background-color: $white;
+    border-color: 1px solid $white;
+  }
+  &:hover {
+    background-color: $color_mercury_approx;
+    &.active {
+      background-color: $color_apricot_approx;
+      color: $white;
+    }
+  }
+  &:focus {
+    background-color: $color_mercury_approx;
+    &.active {
+      background-color: $color_apricot_approx;
+      color: $white;
+    }
+  }
+  &.disabled {
+    @extend %extend_1;
+    &:hover {
+      @extend %extend_1;
+    }
+    &:focus {
+      @extend %extend_1;
+    }
+  }
+  > :last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+}
+.list-group-item[disabled] {
+  @extend %extend_1;
+  &:hover {
+    @extend %extend_1;
+  }
+  &:focus {
+    @extend %extend_1;
+  }
+}
+.inline-list {
+  li {
+    display: inline;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  a {
+    color: $color_mountain_mist_approx;
+  }
+}
+//general
+$space-large: 1.5em;.page-title {
+  color: $red;
   margin-top: $space-large;
   margin-bottom: $space-large;
 }
-
-input[type=search] {
+//list 
+link.list-group {
+  margin-bottom: 1rem;
+  border: 1px solid $color_mercury_approx;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0;
+  background: $color_romance_approx;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
   box-shadow: none;
+  overflow: hidden;
+  color: $color_cod_gray_approx;
+  margin-left: 0;
+  list-style: none;
+}
+.list-group > :last-child {
+  margin-bottom: 0;
 }
 
-.button{
-  background-color:brown;
+//animations
+.fade-enter {
+  opacity: 0.01;
 }
 
-.button:hover{
-	background-color: red;
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
 }
 
-.button.hollow{
-	color:red;
-	border-color: red;
+.fade-leave {
+  opacity: 1;
 }
 
-.button.hollow:hover{
-	color:brown;
-	border-color: brown;
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
 
-a{
-	color: red;
+
+.fade-appear {
+  opacity: 0.01;
 }
 
-a:hover{
-	color: brown;
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
 }
+
+//table with flexbox
+
+/* DivTable.com */
+.table{
+  display: table;
+  width: 100%;
+}
+.divTableRow {
+  display: table-row;
+}
+.divTableHeading {
+  background-color: #EEE;
+  display: table-header-group;
+}
+.divTableCell, .divTableHead {
+  border: 1px solid #999999;
+  display: table-cell;
+  padding: 3px 10px;
+}
+.divTableHeading {
+  background-color: #EEE;
+  display: table-header-group;
+  font-weight: bold;
+}
+.divTableFoot {
+  background-color: #EEE;
+  display: table-footer-group;
+  font-weight: bold;
+}
+.divTableBody {
+  display: table-row-group;
+}
+
+
+// <div class="table" style="border: 2px solid #000;" >
+  
+//   <div class="divTableBody">  
+//     <div class="divTableRow">
+//       <div class="divTableCell"></div>
+//       <div class="divTableCell"></div>
+//       <div class="divTableCell"></div>
+//       <div class="divTableCell"></div>
+//       <div class="divTableCell"></div>
+//       <div class="divTableCell"></div>
+    
+//     </div>
+//   </div>
+// </div>
+

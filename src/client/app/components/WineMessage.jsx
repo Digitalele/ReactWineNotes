@@ -1,22 +1,118 @@
-var React = require('react');
+import React, {Component} from 'react'
+import {Link, IndexLink} from 'react-router'
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
-var WineMessage = React.createClass({
-	render: function () {
-		var {name, location} =	this.props;
-		console.log(this.props);
-		return (
-			<div>
-				
-				<ul>{this.createItems(this.props.name)}</ul>
-			</div>
-		)	
-	},
-	 createItems: function(name){
-        var output = [];
-        for(var i = 0; i < name.length; i++) output.push(<li key={i}>{name[i]}</li>)
+class WineMessage extends Component {
+
+
+	createList (wine) {
+		const output = [];     
+        for(var i = 0; i < wine.length; i++){
+        	console.log(wine[i]);
+        	output.push(	
+        	<li className="list-group-item" key={i}>
+              <Link to={{pathname:`/winefields/${wine[i].Id}`}}>{wine[i].Name}</Link>
+              <ul className="inline-list no-bullet">
+							  <li><a href="#">{wine[i].Varietal.WineType.Name}</a></li>
+							  <li><a href="#">{wine[i].Varietal.Name}</a></li>
+							  <li><a href="#">{wine[i].Vintage}</a></li>
+							</ul>
+        	</li>
+        	
+        	)
+        }
         return output;
     }
-});  
 
-module.exports = WineMessage;
+	render () {
+		var {wine, location} = this.props;
+			
+			if (wine.length <= 3) {
+				var addNew;
+	  			 addNew = <li className="list-group-item active"><Link to={{pathname:`/Winefields/`}}>Add New</Link></li>;
+			} else {
+	  			 addNew = "";
+			}
 
+		return (
+			<div className="small-6 small-centered ">		
+				<ul className="list-group">
+				<CSSTransitionGroup
+	                          	transitionName="fade"                                                                
+	         					transitionEnterTimeout={300}
+	         					transitionLeaveTimeout={300}
+	         					transitionAppearTimeout={1000}
+	                         	transitionAppear={true}>
+
+	                {this.createList(this.props.wine)}
+					{addNew}
+			                    
+			    </CSSTransitionGroup>  
+					
+				</ul>
+			</div>
+		)	
+	}
+
+} 
+
+export default WineMessage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var WineMessage = React.createClass({
+
+// 	createList: function(wine){
+// 		const output = [];     
+//         for(var i = 0; i < wine.length; i++){
+//         	output.push(	
+//         	<li className="list-group-item" key={i}>
+//               <Link to={{pathname:`/winefields/${wine[i].Id}`}}>{wine[i].Name}</Link>
+//         	</li>
+//         	)
+//         }
+//         return output;
+//     },
+
+// 	render: function () {
+// 		var {wine, location} =	this.props;
+			
+// 		if (wine.length <= 3) {
+// 			var addNew;
+//   			 addNew = <li className="list-group-item active"><Link to={{pathname:`/addwine/`}}>Add New</Link></li>;
+// 		} else {
+//   			 addNew = "";
+// 		}
+
+// 		return (
+// 			<div>		
+// 				<ul className="list-group">
+// 					{this.createList(this.props.wine)}
+// 					{addNew}
+// 				</ul>
+// 			</div>
+// 		)	
+// 	}
+
+// });  
+
+// module.exports = WineMessage;
+
+
+
+
+
+//<Link to={"/winefields/"+wine+"/"+wine[i].Id} >{wine[i].Name}</Link>
+// <Link to={{pathname:`/winefields/${wine[i].Id}`, query:wine[i]}}>{wine[i].Name}</Link>

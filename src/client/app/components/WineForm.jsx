@@ -1,26 +1,44 @@
-var React = require('react');
+import React, {Component} from 'react';
 
-var WineForm = React.createClass({
-	onFormSubmit: function (e) {
+class WineForm extends Component {
+
+	  constructor () {
+	    super()
+	    this.onFormSubmit = this.onFormSubmit.bind(this)
+	  }
+
+	onFormSubmit (e) {
 		e.preventDefault();//prevent reload page
-
+		
 		var location = this.refs.location.value;
-
+		
 		if (location.length > 0) {
-			this.refs.location.value = ''; // clear value
+			//search if value length > 0
 			this.props.onSearch(location);
-		}
-	},
-	render: function () {
+		} 
+			//else clear output
+		else if (location.length == 0) {
+				this.props.onSearch(location);
+			}
+	}
+
+	render () {
 		return (
-			<div>
-				<form onSubmit={this.onFormSubmit}>
-					<input type="search" ref="location" placeholder="Search"/>
-					<button className="button expanded hollow">Get Wine</button>
-				</form>	
-			</div>
+			
+				<div className="small-6 small-centered">
+					<form onChange={this.onFormSubmit}>
+						<input type="search" ref="location" placeholder="Search"/>
+					</form>	
+				</div>
+			
 		);
 	}
-});
+}
 
-module.exports = WineForm;
+export default WineForm;
+
+// value={this.state.value}
+//         onChange={this.handleChange} onSubmit
+//<button className="button expanded hollow">Get Wine</button>
+//this.refs.location.value = ''; // clear value
+

@@ -1,11 +1,10 @@
-var React = require('react');
-var {Link} = require('react-router');
+import React, {Component} from 'react'
+import {Link} from 'react-router'
 
-
-var Examples = React.createClass({
-	render: function () {
+class Examples extends Component {
+	render () {
 		return (
-		<div>
+		<div className="small-6 small-centered">
 			<h3 className="text-center page-title">
 				Wines	</h3>
 				<p>
@@ -26,6 +25,6 @@ var Examples = React.createClass({
 			</div>
 		)	
 	}
-});
+}
 
-module.exports = Examples;
+export default Examples;

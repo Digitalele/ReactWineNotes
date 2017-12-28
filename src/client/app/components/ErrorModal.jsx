@@ -6,13 +6,11 @@ var ReactDomServer = require('react-dom/server');
 
 
 var ErrorModal = React.createClass({
-	//pass error in modal component
-	//similar to get inital state
-	//filter validation for var
 
 	getDefaultProps: function() {
 		return {
-			title: 'Error'
+			title: 'Error',
+			callback: ''
 
 		};
 	},
@@ -34,7 +32,9 @@ var ErrorModal = React.createClass({
 				</p>
 			</div>
 		);
-		//Render a React element to its initial HTML. This should only be used on the server. React will return an HTML string. You can use this method to generate HTML on the server and send the markup down on the initial request for faster page loads
+		//Render a React element to its initial HTML. This should only be used on the server.
+		// React will return an HTML string.
+		// You can use this method to generate HTML on the server and send the markup down on the initial request for faster page loads
 		var $modal = $(ReactDomServer.renderToString(modalMarkup));
 
 		$(ReactDom.findDOMNode(this)).html($modal);

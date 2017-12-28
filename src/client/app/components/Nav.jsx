@@ -1,12 +1,12 @@
-var React = require('react');
-var {Link, IndexLink} = require('react-router');
+import React, {Component} from 'react'
+import {Link, IndexLink} from 'react-router'
 
 // var Nav = React.createClass({
 //   render: function () {
 //     return (
 //       <div>
 //         <h2>Nav Component</h2>
-//         <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink>
+//         <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Wine</IndexLink>
 //         <Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link>
 //         <Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link>
 //       </div>
@@ -14,8 +14,14 @@ var {Link, IndexLink} = require('react-router');
 //   }
 // });
 
-var Nav = React.createClass({
-  onSearch: function (e) {
+class Nav extends Component {
+
+  constructor () {
+      super()
+      this.onSearch = this.onSearch.bind(this)
+    }
+
+  onSearch (e) {
     e.preventDefault();
     //navigation search get value
     var location = this.refs.search.value;
@@ -28,14 +34,14 @@ var Nav = React.createClass({
       window.location.hash = '#/?location=' + encodedLocation;
     }
 
-  },
+  }
 
-  render: function () {
+  render () {
      return (
      <div className="top-bar">
         <div className="top-bar-left">
           <ul className="menu">  
-           <li className="menu-text">React Wine App</li> 
+           <li className="menu-text">Wine Note App</li> 
             <li>  
               <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Wine</IndexLink>              
             </li>
@@ -44,6 +50,9 @@ var Nav = React.createClass({
             </li>
             <li>
               <Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link>
+            </li>
+            <li>
+              <Link to="/appcrud" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Crud</Link>
             </li>
           </ul>    
         </div>
@@ -62,10 +71,7 @@ var Nav = React.createClass({
      </div>
     );
   }
-})
+}
 
-
-
-
-module.exports = Nav;
+export default Nav;
 
