@@ -25,11 +25,11 @@ class WineForm extends Component {
 	render () {
 		return (
 			
-				<div className="small-6 small-centered">
-					<form onChange={this.onFormSubmit}>
-						<input type="search" ref="location" placeholder="Search"/>
-					</form>	
-				</div>
+			<div className="small-6 small-centered">
+				<form onChange={this.onFormSubmit}>
+					<input type="search" ref="location" placeholder="Search"/>
+				</form>	
+			</div>
 			
 		);
 	}

@@ -14,10 +14,10 @@ class WineMessageFire extends Component {
         	<li className="list-group-item" key={i}>
               <Link to={{pathname:`/Winefields/${fireWine[i].id}`}}>{fireWine[i].name}</Link>
               	<ul className="inline-list no-bullet">
-								  <li><a href="#">{fireWine[i].type}</a></li>
-								  <li><a href="#">{fireWine[i].varietal}</a></li>
-								  <li><a href="#">{fireWine[i].year}</a></li>
-								</ul>
+				  <li><a href="#">{fireWine[i].type}</a></li>
+				  <li><a href="#">{fireWine[i].varietal}</a></li>
+				  <li><a href="#">{fireWine[i].year}</a></li>
+				</ul>
         	</li>
         	)
         }

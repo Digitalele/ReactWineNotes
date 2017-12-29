@@ -8,15 +8,14 @@ class WineMessage extends Component {
 	createList (wine) {
 		const output = [];     
         for(var i = 0; i < wine.length; i++){
-        	console.log(wine[i]);
         	output.push(	
         	<li className="list-group-item" key={i}>
               <Link to={{pathname:`/winefields/${wine[i].Id}`}}>{wine[i].Name}</Link>
               <ul className="inline-list no-bullet">
-							  <li><a href="#">{wine[i].Varietal.WineType.Name}</a></li>
-							  <li><a href="#">{wine[i].Varietal.Name}</a></li>
-							  <li><a href="#">{wine[i].Vintage}</a></li>
-							</ul>
+				  <li><a href="#">{wine[i].Varietal.WineType.Name}</a></li>
+				  <li><a href="#">{wine[i].Varietal.Name}</a></li>
+				  <li><a href="#">{wine[i].Vintage}</a></li>
+				</ul>
         	</li>
         	
         	)
@@ -65,54 +64,3 @@ export default WineMessage;
 
 
 
-
-
-
-
-
-
-
-// var WineMessage = React.createClass({
-
-// 	createList: function(wine){
-// 		const output = [];     
-//         for(var i = 0; i < wine.length; i++){
-//         	output.push(	
-//         	<li className="list-group-item" key={i}>
-//               <Link to={{pathname:`/winefields/${wine[i].Id}`}}>{wine[i].Name}</Link>
-//         	</li>
-//         	)
-//         }
-//         return output;
-//     },
-
-// 	render: function () {
-// 		var {wine, location} =	this.props;
-			
-// 		if (wine.length <= 3) {
-// 			var addNew;
-//   			 addNew = <li className="list-group-item active"><Link to={{pathname:`/addwine/`}}>Add New</Link></li>;
-// 		} else {
-//   			 addNew = "";
-// 		}
-
-// 		return (
-// 			<div>		
-// 				<ul className="list-group">
-// 					{this.createList(this.props.wine)}
-// 					{addNew}
-// 				</ul>
-// 			</div>
-// 		)	
-// 	}
-
-// });  
-
-// module.exports = WineMessage;
-
-
-
-
-
-//<Link to={"/winefields/"+wine+"/"+wine[i].Id} >{wine[i].Name}</Link>
-// <Link to={{pathname:`/winefields/${wine[i].Id}`, query:wine[i]}}>{wine[i].Name}</Link>

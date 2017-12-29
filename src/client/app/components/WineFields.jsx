@@ -18,8 +18,6 @@ class WineFields extends Component {
 	render () {
 
 		var {params} = this.props;
-		console.log(params);
-		//bind id
 		function renderForm() {
 
 			if(params.id){
@@ -60,21 +58,15 @@ class WineFields extends Component {
 		    			wineVarietal={wineInfo.wineVarietal}				
 		    			wineType={wineInfo.wineType}				
 		    			wineVineyard={wineInfo.wineVineyard}				
-
 	    			/>
-
 	    		)
 
 			} //end if
 
 			else {
-				console.log(params.id);
 			var wine = LocalStorage.getWines();
-			console.log(wine);
 			var values = wine.filter(function (el){
         		if(el.Id == params.id){
-					console.log(el.Id);
-        			console.log(params.id)
         			return true
 
         		} else {
@@ -133,58 +125,9 @@ class WineFields extends Component {
 
 
 
-
 export default WineFields;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*
-Info wine Array
-
-values = [
-	wineName,
-	year,
-	region: south america, cile,
-	raiting: 90,
-	varetial: Cabernet Souvignon,
-	wineType: redwine,
-	vineyard:
-
-]
-
-
-//<strong className="text-center">{params.id}</strong>
-
-// 	WineFields.propTypes = {
-// 	  id: React.PropTypes.string,
-
-// }
-
-
-// WineFields.defaultProps = {
-//     values: ''
-// };
-
-
-*/
-
-
-
-// const Child = ({ match }) => (
-//   <div>
-//     <h3>ID: {match.params.id}</h3>
-//   </div>
-// )
 
 

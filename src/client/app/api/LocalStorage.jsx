@@ -11,11 +11,9 @@ module.exports = {
   getWines: function () {
     let stringwine = localStorage.getItem('wine');
     let wine = [];
-    // console.log(stringwine);
 
     try {
       wine = JSON.parse(stringwine);
-      // console.log(wine);
     } catch (e) {
 		console.log("error");
     }
@@ -33,7 +31,6 @@ module.exports = {
   getFireWines: function () {
     let stringFireWine = localStorage.getItem('fireWine');
     let fireWine = [];
-    // console.log(stringFireWine);
 
     try {
       fireWine = JSON.parse(stringFireWine);
@@ -48,7 +45,4 @@ module.exports = {
 };
 
 
-//WineApi.getWine(location).then((wine));
-//with this location as par
-//wine : [];
 
