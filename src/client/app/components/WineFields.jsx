@@ -2,18 +2,43 @@ import React, {Component} from 'react'
 //var {Link} = require('react-router');
 import LocalStorage from 'LocalStorage'
 import Fields from 'Fields'
+import firebase, { auth, provider } from 'Firebase';
 
 
 
 class WineFields extends Component {
 
-		constructor(props) {    /* Note, is possible passed pros into the constructor in order to be used constructor(props)super(props)*/ 
+	constructor(props) {    /* Note, is possible passed pros into the constructor in order to be used constructor(props)super(props)*/ 
         super(props)
+
+        this.login = this.login.bind(this); 
+  		this.logout = this.logout.bind(this); 
+
+        this.state = {
+	      currentItem: '',
+	      username: '',
+	      items: [],
+	      user: null 
+		}
     }
 
-	PropTypes: {
-				id: React.PropTypes.number.isRequired
-			}
+	handleChange(e) {
+	  /* ... */
+	}
+
+	logout() {
+	  // we will add the code for this in a moment, but need to add the method now or the bind will throw an error
+	}
+
+	login() {
+	  auth.signInWithPopup(provider) 
+	    .then((result) => {
+	      const user = result.user;
+	      this.setState({
+	        user
+	      });
+	    });
+	}
 
 	render () {
 
@@ -110,17 +135,42 @@ class WineFields extends Component {
 		
 
 		return (
-		<div>
-			<h1 className="text-center subheader">
-				WineFields				
-			</h1>					
-			
-			{renderForm()}	
-		
+
+		<div className="row">
+
+			<div className="wrapper small-6 large-centered columns">
+
+				<h1 className="text-center subheader">Wine Searcher Auth</h1>
+
+				{this.state.user ?	  	
+				  	<div>
+				  		<button onClick={this.logout}>Log Out</button>
+				  		<div className="wrapper">
+							<h1 className="text-center subheader">
+								WineFields				
+							</h1>					
+							{renderForm()}	 
+						</div>	    	
+				  	</div>              
+				   :
+				   <div className="small-10 columns">
+				   	<button className="button" onClick={this.login}>Sign In with Google</button>              
+				   	<button className="button" >Sign In with Facebook</button>              
+				   </div>
+				  }
+
+			</div>	
+
 		</div>
+
 		);	
 	}
 };
+
+// var btn-fb = {
+// 	color:'white',
+// 	backgroundColor:'blue',
+// };
 
 
 

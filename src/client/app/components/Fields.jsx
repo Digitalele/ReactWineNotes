@@ -1,13 +1,16 @@
 import React, {Component} from 'react'
 import {ref} from 'Firebase'
 
+
+
 class Fields extends Component {
 
 	constructor () {
 	    super()
 
-			this.dbWine = ref.child('wines');
-	    this.createWine = this.createWine.bind(this)
+		this.dbWine = ref.child('wines');
+	    this.createWine = this.createWine.bind(this);
+
 	  }
 
 		createWine (event) {
@@ -116,6 +119,8 @@ class Fields extends Component {
 		)	
 	}
 }
+
+
 
 export default Fields;
 
