@@ -8,9 +8,12 @@ class WineMessage extends Component {
 	createList (wine) {
 		const output = [];     
         for(var i = 0; i < wine.length; i++){
+        	if(wine[i].organic){
+        		var bio = <img src="http://www.ccpb.it/images/stories/newsonline/nuovo-logo-bio.jpg" width="30" alt="bio"/>;
+        	}
         	output.push(	
         	<li className="list-group-item" key={i}>
-              <Link to={{pathname:`/winefields/${wine[i].Id}`}}>{wine[i].Name}</Link>
+              <Link to={{pathname:`/winefields/${wine[i]._id}`}}>{wine[i].name} {bio}</Link>
               <ul className="inline-list no-bullet">
 				  <li><a href="#">{wine[i].name}</a></li>
 				  <li><a href="#">{wine[i].varietal}</a></li>

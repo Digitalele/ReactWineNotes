@@ -66,7 +66,7 @@ class WineFields extends Component {
 			else {
 			var wine = LocalStorage.getWines();
 			var values = wine.filter(function (el){
-        		if(el.Id == params.id){
+        		if(el._id == params.id){
         			return true
 
         		} else {
@@ -77,14 +77,13 @@ class WineFields extends Component {
     		});
 
     		var wineInfo = {
-				    // 'wineName': values[0].Appellation.Name,
-				    'wineName': values[0].Name.replace(/\./g,''),
-				    'wineRegion': values[0].Appellation.Region.Name,
-				    'wineYear': values[0].Vintage,
-				    'wineRaiting': values[0].Ratings.HighestScore,
-				    'wineVarietal': values[0].Varietal.Name,
-				    'wineType': values[0].Varietal.WineType.Name,
-				    'wineVineyard': values[0].Vineyard.Name
+				    'wineName': values[0].name.replace(/\./g,''),
+				    'wineRegion': values[0].region,
+				    'wineYear': values[0].year,
+				    'wineRaiting': values[0].raiting,
+				    'wineVarietal': values[0].varietal,
+				    'wineType': values[0].type,
+				    'wineVineyard': values[0].vineyard
 				};
 
 	    		return (

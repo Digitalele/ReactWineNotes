@@ -12,7 +12,7 @@ class WineMessageFire extends Component {
         for(var i = 0; i < fireWine.length; i++){
         	outputfireWine.push(	
         	<li className="list-group-item" key={i}>
-              <Link to={{pathname:`/Winefields/${fireWine[i].id}`}}>{fireWine[i].name}</Link>
+              <Link to={{pathname:`/winefields/${fireWine[i].id}`}}>{fireWine[i].name}</Link>
               	<ul className="inline-list no-bullet">
 				  <li><a href="#">{fireWine[i].type}</a></li>
 				  <li><a href="#">{fireWine[i].varietal}</a></li>
