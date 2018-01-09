@@ -12,9 +12,9 @@ class WineMessage extends Component {
         	<li className="list-group-item" key={i}>
               <Link to={{pathname:`/winefields/${wine[i].Id}`}}>{wine[i].Name}</Link>
               <ul className="inline-list no-bullet">
-				  <li><a href="#">{wine[i].Varietal.WineType.Name}</a></li>
-				  <li><a href="#">{wine[i].Varietal.Name}</a></li>
-				  <li><a href="#">{wine[i].Vintage}</a></li>
+				  <li><a href="#">{wine[i].name}</a></li>
+				  <li><a href="#">{wine[i].varietal}</a></li>
+				  <li><a href="#">{wine[i].year}</a></li>
 				</ul>
         	</li>
         	
