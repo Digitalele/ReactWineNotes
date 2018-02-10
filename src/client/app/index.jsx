@@ -13,6 +13,7 @@ import AppCrud from 'AppCrud'
 
 
 
+
 //Load foundation css! loader inject
 require('style!css!foundation-sites/dist/foundation.min.css');
 

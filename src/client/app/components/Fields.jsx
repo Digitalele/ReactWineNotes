@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Modal from 'Modal'
 import {ref} from 'Firebase'
 
 
@@ -8,10 +9,18 @@ class Fields extends Component {
 	constructor () {
 	    super()
 
+	    this.state = {
+      		showReply: false
+    	}
+
 		this.dbWine = ref.child('wines');
 	    this.createWine = this.createWine.bind(this);
 
 	  }
+
+	  	onClick(e){
+    		this.setState({showReply: !this.state.showReply});
+  		}
 
 		createWine (event) {
 		    event.preventDefault()
@@ -111,7 +120,8 @@ class Fields extends Component {
 						<textarea ref={(input) => (this.notes = input)} placeholder="write your personal notes"></textarea>
 					</div>
 				</div>
-					<button type="submit" className="button">Add Wine</button>
+					<button onClick={this.onClick.bind(this)} type="submit" className="button">Add Wine</button>
+					{this.state.showReply && < Modal / >}
 			</form>
 			 
 		</div>

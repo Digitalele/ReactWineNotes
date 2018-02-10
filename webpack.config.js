@@ -41,6 +41,7 @@ var config = {
         Examples: 'src/client/app/components/Examples.jsx',
         ErrorModal: 'src/client/app/components/ErrorModal.jsx',
         About: 'src/client/app/components/About.jsx',
+        Modal: 'src/client/app/components/Modal.jsx',
 
         WineApi: 'src/client/app/api/WineApi.jsx',  
         LocalStorage: 'src/client/app/api/LocalStorage.jsx',
