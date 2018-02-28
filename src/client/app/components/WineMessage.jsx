@@ -4,12 +4,11 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 class WineMessage extends Component {
 
-
 	createList (wine) {
 		const output = [];     
         for(var i = 0; i < wine.length; i++){
         	if(wine[i].organic){
-        		var bio = <img src="http://www.ccpb.it/images/stories/newsonline/nuovo-logo-bio.jpg" width="30" alt="bio"/>;
+        		var bio = <img src="http://www.einsteinjournal.it/wp-content/uploads/2017/02/BIO-agricoltura-biologica-logo-europeo.jpg" width="30" alt="bio"/>;
         	}
         	output.push(	
         	<li className="list-group-item" key={i}>

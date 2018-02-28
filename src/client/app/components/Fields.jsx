@@ -32,7 +32,8 @@ class Fields extends Component {
 		      raiting: this.raiting.value,
 		      type: this.type.value,
 		      varietal: this.varietal.value,
-		      notes: this.notes.value
+		      notes: this.notes.value,
+		      organic: this.organic.value
 		    }
 		    
 		    console.log(wineInfo);
@@ -53,7 +54,10 @@ class Fields extends Component {
 			wineRaiting, 
 			wineVarietal, 
 			wineType, 
-			wineVineyard} = this.props;
+			wineVineyard,
+			wineBio } = this.props;
+
+			console.log(this.props);
 
 			const selectOptions = this.props.wineType.split(', ');
 			selectOptions.push("White Wines","Rosè Wines", "Red Wines");
@@ -118,6 +122,19 @@ class Fields extends Component {
 					<div className="large-12 columns">
 						<h3 className="text-center page-title">Personal Notes</h3>
 						<textarea ref={(input) => (this.notes = input)} placeholder="write your personal notes"></textarea>
+					</div>
+				</div>
+				<div className="row">
+					<div className="large-12 columns">
+						<h3 className="text-center page-title">Bio</h3>
+					
+						<input
+			            ref={(input) => (this.organic = input)} 
+			            type="checkbox"
+						defaultChecked={wineBio}
+					
+			            />
+        			
 					</div>
 				</div>
 					<button onClick={this.onClick.bind(this)} type="submit" className="button">Add Wine</button>

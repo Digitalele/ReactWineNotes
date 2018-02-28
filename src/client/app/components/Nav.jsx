@@ -38,10 +38,10 @@ class Nav extends Component {
 
   render () {
      return (
-     <div className="top-bar">
+     <div className="top-bar-trasp">
         <div className="top-bar-left">
           <ul className="menu">  
-           <li className="menu-text">Wine Note App</li> 
+           <li className="menu-text"><h1>Winery App</h1></li> 
             <li>  
               <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Wine</IndexLink>              
             </li>
@@ -59,12 +59,15 @@ class Nav extends Component {
         <div className="top-bar-right">
            <form onSubmit={this.onSearch}>
               <ul className="menu">
-                <li>
+                {/*<li>
                   <input type="search" placeholder="Search wine" ref="search"/>
                 </li> 
                 <li>
                   <input type="submit" className="button" value="Get Wine"/>
-                </li>   
+                </li>   */}
+                <li>
+                  <input type="submit" className="button" value="Sign In"/>
+                </li>  
               </ul>
            </form> 
         </div>

@@ -27,7 +27,7 @@ class WineForm extends Component {
 			
 			<div className="small-6 small-centered">
 				<form onChange={this.onFormSubmit}>
-					<input type="search" ref="location" placeholder="Search"/>
+					<input type="search" ref="location" placeholder="Search your wines.."/>
 				</form>	
 			</div>
 			

@@ -1,0 +1,66 @@
+.top-bar-trasp{
+	background: 0 0;
+	z-index: 10;
+	position: relative;
+
+
+}
+
+.menu li a{
+	letter-spacing: 1px;
+}
+
+.menu li a:hover{
+	color:#ff0040;
+}
+
+
+
+.menu-text h1{
+	font-size: 22px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color:brown;
+}
+
+.wineForm{
+	background:url(imgs/vineyard-1.jpg);
+	min-height: 100vh;
+	 background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+.main-title{
+	color:#fff;
+}
+
+.page-title{
+color: #fff;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 52px;
+    letter-spacing: 10px;
+    font-weight: 300;
+}
+
+.list-group-item{
+	background-color: #fff;
+}
+
+.top-bar-left {
+    margin-top: 30px;
+    margin-left: 15px;
+    color: #999;
+}
+
+.top-bar-left a{
+
+    color: #fff;
+}
+
+.top-bar-right {
+    margin-top: 30px;
+    margin-right: 20px;
+}

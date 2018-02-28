@@ -32,6 +32,7 @@ var config = {
         Main: 'src/client/app/components/Main.jsx',
         Wine: 'src/client/app/components/Wine.jsx',
         Nav: 'src/client/app/components/Nav.jsx',
+        Footer: 'src/client/app/components/Footer.jsx',
         Fields: 'src/client/app/components/Fields.jsx',
         WineFields: 'src/client/app/components/WineFields.jsx',
         WineList: 'src/client/app/components/WineList.jsx',

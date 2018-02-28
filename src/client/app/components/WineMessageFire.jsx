@@ -2,13 +2,12 @@ import React, {Component} from 'react'
 import {Link, IndexLink} from 'react-router'
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
-//var WineList = require('WineList');
-
 class WineMessageFire extends Component {
 	
 	createListFire (fireWine) {
 		if(fireWine !== undefined){
-		const outputfireWine = [];     
+		const outputfireWine = []; 
+		    // organic
         for(var i = 0; i < fireWine.length; i++){
         	outputfireWine.push(	
         	<li className="list-group-item" key={i}>

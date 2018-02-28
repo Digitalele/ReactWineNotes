@@ -69,9 +69,10 @@ class WineFields extends Component {
 				    'wineRaiting': values[0].rating,
 				    'wineVarietal': values[0].varietal,
 				    'wineType': values[0].type,
-				    'wineVineyard': values[0].vineyard
+				    'wineVineyard': values[0].vineyard,
+				    'wineBio': values[0].organic
 				};
-
+				 
 				return (
 
 	    			<Fields 
@@ -82,7 +83,8 @@ class WineFields extends Component {
 		    			wineRaiting={wineInfo.wineRaiting}	
 		    			wineVarietal={wineInfo.wineVarietal}				
 		    			wineType={wineInfo.wineType}				
-		    			wineVineyard={wineInfo.wineVineyard}				
+		    			wineVineyard={wineInfo.wineVineyard}
+		    			wineBio={wineInfo.wineBio}				
 	    			/>
 	    		)
 
@@ -108,9 +110,10 @@ class WineFields extends Component {
 				    'wineRaiting': values[0].raiting,
 				    'wineVarietal': values[0].varietal,
 				    'wineType': values[0].type,
-				    'wineVineyard': values[0].vineyard
+				    'wineVineyard': values[0].vineyard,
+				    'wineBio': values[0].organic
 				};
-
+				console.log(wineInfo.wineBio, 'organic');
 	    		return (
 
 	    			<Fields 
@@ -121,7 +124,8 @@ class WineFields extends Component {
 		    			wineRaiting={wineInfo.wineRaiting}	
 		    			wineVarietal={wineInfo.wineVarietal}				
 		    			wineType={wineInfo.wineType}				
-		    			wineVineyard={wineInfo.wineVineyard}				
+		    			wineVineyard={wineInfo.wineVineyard}
+		    			wineBio={wineInfo.wineBio}				
 
 	    			/>
 
@@ -140,24 +144,24 @@ class WineFields extends Component {
 
 			<div className="wrapper small-6 large-centered columns">
 
-				<h1 className="text-center subheader">Wine Searcher Auth</h1>
+				{/*<h1 className="text-center subheader">Wine Searcher Auth</h1>*/}
 
-				{this.state.user ?	  	
+				{/*{this.state.user ?	*/}  	
 				  	<div>
 				  		<button onClick={this.logout}>Log Out</button>
 				  		<div className="wrapper">
-							<h1 className="text-center subheader">
-								WineFields				
+							<h1 className="text-center main-title">
+								Notes your Wine				
 							</h1>					
 							{renderForm()}	 
 						</div>	    	
 				  	</div>              
-				   :
+				  {/* :*/}
 				   <div className="small-10 columns">
 				   	<button className="button" onClick={this.login}>Sign In with Google</button>              
 				   	<button className="button" >Sign In with Facebook</button>              
 				   </div>
-				  }
+				  {/*}*/}
 
 			</div>	
 
