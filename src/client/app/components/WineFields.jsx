@@ -88,9 +88,8 @@ class WineFields extends Component {
 	    			/>
 	    		)
 
-			} //end if
+			} else {
 
-			else {
 			var wine = LocalStorage.getWines();
 			var values = wine.filter(function (el){
         		if(el._id == params.id){
@@ -113,7 +112,6 @@ class WineFields extends Component {
 				    'wineVineyard': values[0].vineyard,
 				    'wineBio': values[0].organic
 				};
-				console.log(wineInfo.wineBio, 'organic');
 	    		return (
 
 	    			<Fields 
@@ -148,18 +146,18 @@ class WineFields extends Component {
 
 				{/*{this.state.user ?	*/}  	
 				  	<div>
-				  		<button onClick={this.logout}>Log Out</button>
-				  		<div className="wrapper">
+				  		<button onClick={this.logout}>{/*Log Out*/}</button>
+				  		<div className="">
 							<h1 className="text-center main-title">
-								Notes your Wine				
+								Write down your wine			
 							</h1>					
 							{renderForm()}	 
 						</div>	    	
 				  	</div>              
 				  {/* :*/}
-				   <div className="small-10 columns">
-				   	<button className="button" onClick={this.login}>Sign In with Google</button>              
-				   	<button className="button" >Sign In with Facebook</button>              
+				   <div className="small-9 columns social">
+				   	<button className="button social-btn" onClick={this.login}>Google Sign In</button>              
+				   	<button className="button social-btn" >Facebook Sign In</button>              
 				   </div>
 				  {/*}*/}
 

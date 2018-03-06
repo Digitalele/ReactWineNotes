@@ -10,6 +10,37 @@ $color_stack_approx: #8a8a8a;
 $color_mountain_mist_approx: #999;
 
 
+.button-circle{
+  display:block;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border: 2px solid brown;
+  color:#fff;
+  margin:10px auto;
+  cursor: pointer; 
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 4px 8px 0 rgba(0,0,0,0.19);
+}
+
+.button-add{
+  color:brown;
+}
+
+.button-delete{
+  color:red;
+}
+
+.button-circle a{
+  color:fff;
+}
+
+.social{
+  margin:0 auto;
+}
+
+.social-btn{
+  margin:auto;
+}
 
 ul{
   margin-left: 0;
@@ -34,6 +65,8 @@ input[type=search] {
   box-shadow: none;
 }
 .button {
+  margin-top:10px;
+
   background-color: $color_mexican_red_approx;
   &:hover {
     background-color: $red;

@@ -20,6 +20,8 @@ class Fields extends Component {
 
 	  	onClick(e){
     		this.setState({showReply: !this.state.showReply});
+    		setTimeout(function(){ window.location.hash = '#/appcrud'; }, 2000);
+    		
   		}
 
 		createWine (event) {
@@ -41,9 +43,9 @@ class Fields extends Component {
 			if (wineInfo.name.length !== 0) {
       			this.dbWine.push(wineInfo);
 
-				} else {
-					console.log("name cant be empty")
-				}
+			} else {
+				console.log("name cant be empty")
+			}
 		}
 
 	render () {
@@ -77,68 +79,93 @@ class Fields extends Component {
 		<div>
 
 			<form onSubmit={(e) => this.createWine(e)}>
-
+	
 				<div className="row">
-					<div className="large-4 columns">	
-						
-						 <label>
-						 <h3 className="text-center page-title">Wine Name</h3>
-						<input ref={(input) => (this.name = input)} type="text" defaultValue={wineName} placeholder="Name" />
-						 </label>
-					</div>
-					<div className="large-4 columns">		
-						<h3 className="text-center page-title">Wine Region</h3>
-						<input ref={(input) => (this.region = input)} type="text" defaultValue={wineRegion} placeholder="Region"/>
+				  <div className="columns">
+				   	<div className="accordion">
+					  <input id="toggle1" type="radio" className="accordion-toggle" name="toggle" />
+					  <label htmlFor="toggle1"><h3 className="acc-title">Wine Name</h3></label>
+					  <section>
+					    <input ref={(input) => (this.name = input)} type="text" defaultValue={wineName} placeholder="Name" />
+					  </section>
 					</div>
 
-					<div className="large-4 columns">
-						<h3 className="text-center page-title">Wine Year</h3>
-						<input ref={(input) => (this.year = input)} type="text" defaultValue={wineYear} placeholder="Year"/>
+					<div className="accordion">
+					  <input id="toggle2" type="radio" className="accordion-toggle" name="toggle" />
+					  <label htmlFor="toggle2"><h3 className="acc-title">Wine Region</h3></label>
+					  <section>
+					    <input ref={(input) => (this.region = input)} type="text" defaultValue={wineRegion} placeholder="Region"/>
+					  </section>
 					</div>
+
+					<div className="accordion">
+					  <input id="toggle3" type="radio" className="accordion-toggle" name="toggle" />
+					  <label htmlFor="toggle3"><h3 className="acc-title">Wine Year</h3></label>
+					  <section>
+					    <input ref={(input) => (this.year = input)} type="date" defaultValue={wineYear} placeholder="Year"/>
+					  </section>
+					</div>
+
+					<div className="accordion">
+					  <input id="toggle4" type="radio" className="accordion-toggle" name="toggle" />
+					  <label htmlFor="toggle4"><h3 className="acc-title">Wine Raiting</h3></label>
+					  <section>
+					    <input ref={(input) => (this.raiting = input)} type="number" defaultValue={wineRaiting} placeholder="Raiting"/>
+					  </section>
+					</div>
+
+					<div className="accordion">
+					  <input id="toggle5" type="radio" className="accordion-toggle" name="toggle" />
+					  <label htmlFor="toggle5"><h3 className="acc-title">Wine Varietal</h3></label>
+					  <section>
+					    <input ref={(input) => (this.varietal = input)} type="text" defaultValue={wineVarietal} placeholder="Varietal"/>
+					  </section>
+					</div>
+
+					<div className="accordion">
+					  <input id="toggle6" type="radio" className="accordion-toggle" name="toggle" />
+					  <label htmlFor="toggle6"><h3 className="acc-title">Wine Type</h3></label>
+					  <section>
+					    <select ref={(input) => (this.type = input)}>
+						         <option value={wineType}>{wineType}</option>
+						         {selectOptionsList}
+						    </select>
+					  </section>
+					</div>
+
+					<div className="accordion">
+					  <input id="toggle7" type="radio" className="accordion-toggle" name="toggle" />
+					  <label htmlFor="toggle7"><h3 className="acc-title">Wine Vineyard</h3></label>
+					  <section>
+					    <input ref={(input) => (this.vineyard = input)} type="text" defaultValue={wineVineyard} placeholder="Vineyard"/>
+					  </section>
+					</div>
+
+					<div className="accordion">
+					  <input id="toggle8" type="radio" className="accordion-toggle" name="toggle" />
+					  <label htmlFor="toggle8"><h3 className="acc-title">Organic</h3></label>
+					  <section>
+					    <input
+				            ref={(input) => (this.organic = input)} 
+				            type="checkbox"
+							defaultChecked={wineBio}
+				            />
+					  </section>
+					</div>
+
+					<div className="accordion">
+					  <input id="toggle9" type="radio" className="accordion-toggle" name="toggle" />
+					  <label htmlFor="toggle9"><h3 className="acc-title">Personal Notes</h3></label>
+					  <section>
+					    <textarea ref={(input) => (this.notes = input)} placeholder="write your personal notes"></textarea>
+					  </section>
+					</div>
+
+				  </div>
 				</div>
 
-				<div className="row">
-					<div className="large-3 columns">
-						<h3 className="text-center page-title">Wine Raiting</h3>
-						<input ref={(input) => (this.raiting = input)} type="text" defaultValue={wineRaiting} placeholder="Raiting"/>
-					</div>
-					<div className="large-3 columns">
-						<h3 className="text-center page-title">Wine Varietal</h3>
-						<input ref={(input) => (this.varietal = input)} type="text" defaultValue={wineVarietal} placeholder="Varietal"/>
-					</div>
-					<div className="large-3 columns">	
-						<h3 className="text-center page-title">Wine Type</h3>
-						<select ref={(input) => (this.type = input)}>
-					         <option value={wineType}>{wineType}</option>
-					         {selectOptionsList}
-					    </select>
-					</div>
-					<div className="large-3 columns">
-						<h3 className="text-center page-title">Wine Vineyard</h3>
-						<input ref={(input) => (this.vineyard = input)} type="text" defaultValue={wineVineyard} placeholder="Vineyard"/>
-					</div>
-				</div>
-				<div className="row">
-					<div className="large-12 columns">
-						<h3 className="text-center page-title">Personal Notes</h3>
-						<textarea ref={(input) => (this.notes = input)} placeholder="write your personal notes"></textarea>
-					</div>
-				</div>
-				<div className="row">
-					<div className="large-12 columns">
-						<h3 className="text-center page-title">Bio</h3>
-					
-						<input
-			            ref={(input) => (this.organic = input)} 
-			            type="checkbox"
-						defaultChecked={wineBio}
-					
-			            />
-        			
-					</div>
-				</div>
-					<button onClick={this.onClick.bind(this)} type="submit" className="button">Add Wine</button>
-					{this.state.showReply && < Modal / >}
+				<button onClick={this.onClick.bind(this)} type="submit" className="button-circle button-add"><i className="fa fa-plus"></i></button>
+				{this.state.showReply && < Modal / >}
 			</form>
 			 
 		</div>

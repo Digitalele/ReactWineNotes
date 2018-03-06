@@ -28,7 +28,7 @@ class Delete extends Component {
             
             <td>
             	<form onClick={(e) => this.deleteWine(e)}>
-	            	<button type="submit" className="button alert" ref="id" value={id}>
+	            	<button type="submit" className="button-circle button-delete" ref="id" value={id}>
 	            		<i className="fa fa-trash-o" aria-hidden="true"></i>
 	            	</button>
                 </form>

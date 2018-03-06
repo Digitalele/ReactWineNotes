@@ -1,9 +1,9 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+
 .top-bar-trasp{
 	background: 0 0;
 	z-index: 10;
 	position: relative;
-
-
 }
 
 .menu li a{
@@ -14,8 +14,6 @@
 	color:#ff0040;
 }
 
-
-
 .menu-text h1{
 	font-size: 22px;
 	font-weight: 600;
@@ -24,7 +22,8 @@
 }
 
 .wineForm{
-	background:url(imgs/vineyard-1.jpg);
+	background:
+#ff4343;
 	min-height: 100vh;
 	 background-repeat: no-repeat;
     background-size: cover;
@@ -34,6 +33,7 @@
 
 .main-title{
 	color:#fff;
+	font-weight: 300;
 }
 
 .page-title{
@@ -41,6 +41,23 @@ color: #fff;
     margin-top: 3em;
     margin-bottom: 1em;
     font-size: 52px;
+    letter-spacing: 10px;
+    font-weight: 300;
+}
+
+.acc-title{
+	color:#ff4343;
+	    margin: 13px auto;
+    font-size: 18px;
+    letter-spacing: 5px;
+    font-weight: 400;
+}
+
+.form-title{
+color: #fff;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 16px;
     letter-spacing: 10px;
     font-weight: 300;
 }
@@ -64,3 +81,70 @@ color: #fff;
     margin-top: 30px;
     margin-right: 20px;
 }
+
+/*Accordion*/
+
+
+.accordion{
+	transform: translateZ(0);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.accordion > .accordion-toggle{
+	position: absolute;
+	opacity: 0;
+	display: none;
+}
+
+.accordion > label {
+    position: relative;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 700;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+}
+
+.accordion > label:after {
+  content: '\f078';
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  font-family: fontawesome;
+  transform: rotate(90deg);
+  transition: .3s transform;
+  font-size: 10px;
+  color:#ff4343;
+}
+
+.accordion > section{
+	height: 0;
+	transition: .3s all;
+	overflow: hidden;
+
+}
+
+.accordion > .accordion-toggle:checked ~ label:after{
+ transform: rotate(0deg);
+}
+
+.accordion > .accordion-toggle:checked ~ section{
+
+  padding: 1rem 3rem 4rem 1.8rem;
+}
+
+.accordion > section p {
+  margin: 15px 0;
+  padding: 0 20px;
+  font-size: 12px;
+  line-height: 1.5;
+ 
+}
+
+
+

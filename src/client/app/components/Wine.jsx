@@ -12,9 +12,9 @@ class Wine extends Component {
 	constructor() {    /* Note, is possible passed pros into the constructor in order to be used constructor(props)super(props)*/ 
         super()
         // Bind custom methods
-				this.handleSearch = this.handleSearch.bind(this);
-				this.apiSearch = this.apiSearch.bind(this);
-				this.theWine = ref.child('wines');
+		this.handleSearch = this.handleSearch.bind(this);
+		this.apiSearch = this.apiSearch.bind(this);
+		this.theWine = ref.child('wines');
 
         this.state = {
             isLoading: false,
@@ -39,11 +39,7 @@ class Wine extends Component {
 		//conver first letter to uppercase for search wine in firebase case insensitive
 		//add helper to perform this function
 		var location = location.charAt(0).toUpperCase() + location.slice(1);
-		//console.log(location);
-		var that = this; //create this before to call scope above 
-		//loading
-		//mantain state for error message
-		
+		var that = this; 
 		this.setState({
 			isLoading: true,
 			//clear data message for new search
@@ -76,6 +72,7 @@ class Wine extends Component {
 				//creates an array of object enumetated
 			    Object.keys(dataVal).forEach((data) => {
 			    		//var data = data.val();
+			    		console.log(dataVal, 'data');
 			  		fireWine.push({
 						id: data,
 						...dataVal[data]		
@@ -103,8 +100,8 @@ class Wine extends Component {
 
 
 	apiSearch(location) {
-
-		var that = this; //create this before to call scope above 
+		if(location){
+			var that = this; //create this before to call scope above 
 		//loading
 		//mantain state for error message
 		
@@ -130,7 +127,16 @@ class Wine extends Component {
 				isLoading: false,
 				errorMessage: e.message //string
 			});
+			console.log("The read failed: " + e.code);
 		}); 
+	} else {
+		this.setState({
+			isLoading: false,
+			//clear data message for new search
+			location: undefined,
+		});
+	}
+		
 	}
 
 	componentWillMount() {

@@ -67,7 +67,11 @@ class Nav extends Component {
                 </li>   */}
                 <li>
                   <input type="submit" className="button" value="Sign In"/>
-                </li>  
+                </li>
+                <li>
+                  <button className="button" onClick={this.logout}>Log Out</button>
+                </li>
+                
               </ul>
            </form> 
         </div>

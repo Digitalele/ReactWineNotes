@@ -26,7 +26,6 @@ class WineList extends Component {
 
     render() {
     	var {name, year, varietal, type, id} = this.props;
-        console.log(this.props);
         return (
               <tr>
                     <td>{name}</td>

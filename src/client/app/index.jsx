@@ -15,9 +15,10 @@ import AppCrud from 'AppCrud'
 
 
 //Load foundation css! loader inject
-require('style!css!foundation-sites/dist/foundation.min.css');
+require('style-loader!css-loader!foundation-sites/dist/css/foundation-float.min.css');
 
 $(document).foundation();
+
 
 //App css
 require('style!css!sass!applicationStyles');

@@ -9,7 +9,7 @@ var APP_DIR = path.resolve(__dirname, 'src/client/app');
 var config = {
   entry: [
     'script!node_modules/jquery/dist/jquery.min.js',
-    'script!node_modules/foundation-sites/dist/foundation.min.js',
+    'script!node_modules/foundation-sites/dist/js/foundation.min.js',
     APP_DIR + '/index.jsx'
     ],
     externals: {
