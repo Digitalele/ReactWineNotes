@@ -9,6 +9,7 @@ import About from 'About'
 import Examples from 'Examples'
 import WineFields from 'WineFields'
 import AppCrud from 'AppCrud'
+import WineFieldsEdit from 'WineFieldsEdit'
 
 
 
@@ -18,7 +19,6 @@ import AppCrud from 'AppCrud'
 require('style-loader!css-loader!foundation-sites/dist/css/foundation-float.min.css');
 
 $(document).foundation();
-
 
 //App css
 require('style!css!sass!applicationStyles');
@@ -31,6 +31,7 @@ ReactDOM.render(
     <Route path="examples" component={Examples}/>
     <Route path="appcrud" component={AppCrud}/>
     <Route path="winefields(/:id)" component={WineFields} />
+    <Route path="winefieldsedit(/:id)" component={WineFieldsEdit} />
     <IndexRoute component={Wine}/>
   </Route>
 </Router>,

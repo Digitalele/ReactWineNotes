@@ -8,27 +8,12 @@ import DataList from 'DataList'
 class AppCrud extends Component {
 	constructor() {    /* Note, is possible passed pros into the constructor in order to be used constructor(props)super(props)*/ 
         super()
-        // Bind custom methods
-        //this.retriveData = this.retriveData.bind(this);
         
         this.theWine = ref.child('wines');
         this.state = {
             data: []
         };
     }
-    
-    // retriveData() {
-    //     const path = ref.child('wines');
-    //     path.orderByChild('name')           //ORDERBY
-    //     .limitToFirst(30)
-    //     .on("value", function(snap) {
-    //           console.log(snap.val());
-    //           var val = snap.val();
-    //             console.log(val);
-    //         }, function (errorObject) {
-    //           console.log("The read failed: " + errorObject.code);
-    //     });
-    // }
 
     componentDidMount = () =>  {
 
@@ -41,15 +26,11 @@ class AppCrud extends Component {
         var dataVal = snap.val() || {};
         const crud =  []; 
     Object.keys(dataVal).forEach((data) => {      
-                console.log(dataVal);
-                console.log(data);
                  
                 crud.push({
                     id: data,
                     ...dataVal[data]        
                 });
-            
-                console.log(crud);
 
             }); 
 
@@ -82,7 +63,6 @@ class AppCrud extends Component {
             function crud(){
                 
                 if(dataList){
-                    console.log(dataList);
                     return(<DataList dataList={dataList}/>)
 
                 }

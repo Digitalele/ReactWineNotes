@@ -10,21 +10,14 @@ class Upgrade extends Component {
         // Bind custom methods
         console.log(props);
         this.upgradeWine = this.upgradeWine.bind(this);
-        this.theWine = ref.child('wines');
+       
 
     }
 
-    upgradeWine(e){
+    upgradeWine(){
         
-       e.preventDefault()
        var key = this.refs.id.value;
-       var wineKey = this.theWine.child(key).once('value').then(function(snapshot) {
-          var upgradeData = snapshot.val();
 
-          console.log(upgradeData, 'data');
-        });
-
-       console.log('key', wineKey);
       }
 
 
@@ -37,7 +30,7 @@ class Upgrade extends Component {
             <td>
             	<form onClick={(e) => this.upgradeWine(e)}>
 	            	<button type="submit" className="button-circle" ref="id" value={id}>
-                 <Link to={{pathname:`/winefields/${id}`}}>
+                 <Link to={{pathname:`/winefieldsedit/${id}`}}>
                     <i className="fa fa-cloud-upload" aria-hidden="true"></i>
                   </Link>
 	            	</button>

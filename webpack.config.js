@@ -53,6 +53,8 @@ var config = {
         WineList: 'src/client/app/components/crud/WineList.jsx',
         Upgrade: 'src/client/app/components/crud/Upgrade.jsx',
         Delete: 'src/client/app/components/crud/Delete.jsx',
+        WineEdit: 'src/client/app/components/crud/WineEdit.jsx',
+        WineFieldsEdit: 'src/client/app/components/crud/WineFieldsEdit.jsx',
 
         applicationStyles: 'src/client/app/styles/app.scss'
     },

@@ -46,20 +46,18 @@ class WineFields extends Component {
 		function renderForm() {
 
 			if(params.id){
-			//es6 substring()
 			if(params.id.startsWith("-")){
 				var fireWine = LocalStorage.getFireWines();
 				var values = fireWine.filter(function (el){
         		if(el.id == params.id){
         			return true
         		} else {
-        			return false 
         			console.log('error in bind name')
+        			return false 
+        			
         		}
 
     		});
-
-				//string.replace( /\[\d+\]/g, '[newvalue]');
 
 				var wineInfo = {
 				    // 'wineName': values[0].Appellation.Name,
@@ -96,8 +94,9 @@ class WineFields extends Component {
         			return true
 
         		} else {
-        			return false 
         			console.log('error in bind name')
+        			return false 
+        			
         		}
 
     		});
@@ -168,13 +167,6 @@ class WineFields extends Component {
 		);	
 	}
 };
-
-// var btn-fb = {
-// 	color:'white',
-// 	backgroundColor:'blue',
-// 	style={}
-// };
-
 
 
 export default WineFields;
