@@ -55,7 +55,7 @@ class WineFields extends Component {
     			});
 
     			var wineInfo = {
-				    // 'wineName': values[0].Appellation.Name,
+    				'wineId': values[0].id,
 				    'wineName': values[0].name.replace(/\./g,''),
 				    'wineRegion': values[0].region,
 				    'wineYear': values[0].year,
@@ -64,12 +64,14 @@ class WineFields extends Component {
 				    'wineType': values[0].type,
 				    'wineVineyard': values[0].vineyard,
 				    'wineBio': values[0].organic
+				    
 				};
 			}
 		
 				return (
 
-	    			<WineEdit 
+	    			<WineEdit
+	    				wineId={wineInfo.wineId} 
 	    				wineName={wineInfo.wineName}
 		    			wineRegion={wineInfo.wineRegion}
 		    			wineYear={wineInfo.wineYear}

@@ -12,13 +12,13 @@ class Fields extends Component {
       		
     	}
 
-		this.dbWine = ref.child('wines');
+		this.dbWine = ref.child('/wines/');
 	    this.editWine = this.editWine.bind(this);
 
 	  }
 
 	  	onClick(e){
-    		setTimeout(function(){ window.location.hash = '#/appcrud'; }, 2000);	
+    		//setTimeout(function(){ window.location.hash = '#/appcrud'; }, 2000);	
   		}
 
 		editWine (event) {
@@ -37,7 +37,16 @@ class Fields extends Component {
 		    
 			
 			if (wineInfo.name.length !== 0) {
-      			this.dbWine.push(wineInfo);
+				var { wineId } = this.props;
+				console.log(wineId, 'id update');
+      			//this.dbWine.push(wineInfo);
+      			var updates = {};
+      			var newPostKey = this.dbWine.push().key;
+      			this.dbWine.child(wineId)
+        			.update(wineInfo);
+        		updates[wineId] = wineInfo;
+
+        		return this.dbWine.update(updates);
 
 			} else {
 				console.log("name cant be empty")
@@ -54,8 +63,6 @@ class Fields extends Component {
 			wineType, 
 			wineVineyard,
 			wineBio } = this.props;
-
-			console.log(this.props);
 
 			const selectOptions = this.props.wineType.split(', ');
 			selectOptions.push("White Wines","Rosè Wines", "Red Wines");

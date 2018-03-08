@@ -20,8 +20,6 @@ class Delete extends Component {
 
     render() {
         var {id} = this.props;
-    	console.log(id);
-     
         return (
             
             <td>
