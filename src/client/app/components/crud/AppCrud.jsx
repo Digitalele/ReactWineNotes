@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {ref} from 'Firebase'
 import DataList from 'DataList'
-
+import LocalStorage from 'LocalStorage'
 
 
 
@@ -11,13 +11,12 @@ class AppCrud extends Component {
         
         this.theWine = ref.child('wines');
         this.state = {
-            data: []
+            dataList: []
         };
     }
 
     componentDidMount = () =>  {
 
-    
     var that = this;
     this.theWine.orderByChild('name')           //ORDERBY
         .limitToFirst(30)
@@ -27,20 +26,23 @@ class AppCrud extends Component {
         const crud =  []; 
     Object.keys(dataVal).forEach((data) => {      
                  
-                crud.push({
-                    id: data,
-                    ...dataVal[data]        
-                });
+        crud.push({
+            id: data,
+            ...dataVal[data]        
+        });
 
-            }); 
+    }); 
 
-            that.setState({
-                     dataList: crud
-                    
-                 });
+    that.setState({
+             dataList: crud
             
+         });
+    
+    let setFireWinesStorage = LocalStorage.setFireWines(that.state.dataList);
+    console.log(setFireWinesStorage + 'update set wine crud');
 
-    console.log(that.state.dataList);
+          
+    //console.log(that.state.dataList);
 
     }, function (e) {
                 //state error
@@ -55,7 +57,6 @@ class AppCrud extends Component {
     }
 
   
-
     render() {
 
         var {dataList} = this.state; //pull the states

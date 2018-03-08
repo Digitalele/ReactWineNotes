@@ -160,7 +160,7 @@ class Fields extends Component {
 				  </div>
 				</div>
 
-				<button onClick={this.onClick.bind(this)} type="submit" className="button-circle button-add"><i className="fa fa-plus"></i></button>
+				<button onClick={this.onClick.bind(this)} type="submit" className="button-circle button-add"><i className="fa fa-check"></i></button>
 			</form>
 			 
 		</div>

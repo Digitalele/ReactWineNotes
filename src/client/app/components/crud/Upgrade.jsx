@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {ref} from 'Firebase'
 import {Link, IndexLink} from 'react-router'
+import LocalStorage from 'LocalStorage'
 
 
 class Upgrade extends Component {
@@ -10,14 +11,14 @@ class Upgrade extends Component {
         // Bind custom methods
         console.log(props);
         this.upgradeWine = this.upgradeWine.bind(this);
-       
+        this.theWine = ref.child('wines');
 
     }
 
-    upgradeWine(){
-        
-       var key = this.refs.id.value;
-
+    upgradeWine(e){
+        e.preventDefault();
+    
+        var key = this.refs.id.value;
       }
 
 
@@ -29,11 +30,13 @@ class Upgrade extends Component {
             
             <td>
             	<form onClick={(e) => this.upgradeWine(e)}>
-	            	<button type="submit" className="button-circle" ref="id" value={id}>
+	            	
                  <Link to={{pathname:`/winefieldsedit/${id}`}}>
-                    <i className="fa fa-cloud-upload" aria-hidden="true"></i>
+                    <button type="submit" className="button-circle" ref="id" value={id}>
+                      <i className="fa fa-cloud-upload" aria-hidden="true"></i>
+                    </button>
                   </Link>
-	            	</button>
+	            
 	            </form>
            	</td> 
                             
