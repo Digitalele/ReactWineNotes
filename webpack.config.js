@@ -43,6 +43,7 @@ var config = {
         ErrorModal: 'src/client/app/components/ErrorModal.jsx',
         About: 'src/client/app/components/About.jsx',
         Modal: 'src/client/app/components/Modal.jsx',
+        ModalError: 'src/client/app/components/ModalError.jsx',
 
         WineApi: 'src/client/app/api/WineApi.jsx',  
         LocalStorage: 'src/client/app/api/LocalStorage.jsx',

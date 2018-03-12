@@ -6,38 +6,35 @@ class WineList extends Component {
 
     constructor() {    /* Note, is possible passed pros into the constructor in order to be used constructor(props)super(props)*/ 
         super()
-        // Bind custom methods
-        // this.handleUpgrade = this.handleUpgrade.bind(this)
-        // this.handleDelete = this.handleDelete.bind(this)
-        
 
     }
 
-    // handleDelete(){
-        
-    //     console.log('delete');
-    // }
-
-    // handleUpgrade(){
-        
-    //     console.log('upgrade');
-    
-    // }
-
     render() {
-    	var {name, year, varietal, type, id} = this.props;
+    	var {name, year, varietal, type, organic, id} = this.props;
+        if(organic){
+                var bio = <img style={img} src="http://www.einsteinjournal.it/wp-content/uploads/2017/02/BIO-agricoltura-biologica-logo-europeo.jpg" alt="bio"/>;
+            } else {bio = 'none';}
         return (
               <tr>
                     <td>{name}</td>
                     <td>{year}</td>
                     <td>{varietal}</td>
                     <td>{type}</td>
-                    <Upgrade  id={id}/>
-                    <Delete  id={id}/>
+                    <td>{bio}</td>
+                    <Upgrade id={id}/>
+                    <Delete id={id}/>
               </tr>
         );
     }
 }
 
+const img = {
+  width: '80px',
+   borderRadius:100,
+};
+
 export default WineList;
+
+
+
 

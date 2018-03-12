@@ -88,7 +88,7 @@ class AppCrud extends Component {
                     <div>
                         <h2 className="page-title text-center main-title">{username} Wine List</h2>
                                  
-                        <div className="small-6 small-centered">
+                        <div className="small-8 small-centered">
 
                             {crud()}
                            

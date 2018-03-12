@@ -27,9 +27,10 @@ class DataList extends Component {
 	                 <thead>
 		                  <tr>
 		                    <th width="150">Name</th>
-		                    <th>Year</th>
+		                    <th width="150">Year</th>
 		                    <th width="150">Varietal</th>
-		                    <th width="150">Type</th>  
+		                    <th width="150">Type</th>
+		                    <th width="50">Organic</th>
 		                    <th width="50">Upgrade</th>
 		                    <th width="50">Delete</th>
 		                  </tr>

@@ -153,17 +153,19 @@ class WineFields extends Component {
 
 		<div className="row">
 
-			<div className="wrapper small-6 large-centered columns">
+			<div className="wrapper small-8 large-centered columns">
 
 			{this.state.user ?	
 				  	<div>
-				  		<button onClick={this.logout}>{/*Log Out*/}</button>
-				  		<div className="">
-							<h1 className="text-center main-title">
-								Write down your wine			
-							</h1>					
-							{renderForm()}	 
-						</div>	    	
+				  		<div className="wrapper small-10 large-centered columns">
+					  		<button onClick={this.logout}>{/*Log Out*/}</button>
+					  		<div className="">
+								<h1 className="text-center main-title">
+									Write down your wine			
+								</h1>					
+								{renderForm()}	 
+							</div>	
+						</div>    	
 				  	</div>              
 				:
 

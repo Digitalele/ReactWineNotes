@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'Modal'
+import ModalError from 'ModalError'
 import {ref} from 'Firebase'
 
 
@@ -10,18 +11,14 @@ class Fields extends Component {
 	    super()
 
 	    this.state = {
-      		showReply: false
+      		showReply: false,
+      		showReplyError: false
     	}
 
 		this.dbWine = ref.child('wines');
 	    this.createWine = this.createWine.bind(this);
 
 	  }
-
-	  	onClick(e){
-    		this.setState({showReply: !this.state.showReply});
-    		setTimeout(function(){ window.location.hash = '#/appcrud'; }, 1000);	
-  		}
 
 		createWine (event) {
 		    event.preventDefault()
@@ -41,8 +38,11 @@ class Fields extends Component {
 			
 			if (wineInfo.name.length !== 0) {
       			this.dbWine.push(wineInfo);
+      			this.setState({showReply: !this.state.showReply});
+      			setTimeout(function(){ window.location.hash = '#/appcrud'; }, 1000);
 
 			} else {
+				this.setState({showReplyError: !this.state.showReplyError});
 				console.log("name cant be empty")
 			}
 		}
@@ -128,7 +128,7 @@ class Fields extends Component {
 					    <select ref={(input) => (this.type = input)}>
 						         <option value={wineType}>{wineType}</option>
 						         {selectOptionsList}
-						    </select>
+						</select>
 					  </section>
 					</div>
 
@@ -147,8 +147,9 @@ class Fields extends Component {
 					    <input
 				            ref={(input) => (this.organic = input)} 
 				            type="checkbox"
-							defaultChecked={wineBio}
+							defaultValue={wineBio}
 							value={wineBio}
+							checkedLink={wineBio}
 				            />
 					  </section>
 					</div>
@@ -164,8 +165,9 @@ class Fields extends Component {
 				  </div>
 				</div>
 
-				<button onClick={this.onClick.bind(this)} type="submit" className="button-circle button-add"><i className="fa fa-plus"></i></button>
+				<button type="submit" className="button-circle button-add"><i className="fa fa-plus"></i></button>
 				{this.state.showReply && < Modal / >}
+				{this.state.showReplyError && < ModalError / >}
 			</form>
 			 
 		</div>
