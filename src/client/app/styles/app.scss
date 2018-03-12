@@ -9,6 +9,32 @@ $color_apricot_approx: #ee8176;
 $color_stack_approx: #8a8a8a;
 $color_mountain_mist_approx: #999;
 
+//loader
+.loading{
+  color:white;
+}
+
+//form
+.container-input{
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container-input .icon{
+  position: absolute;
+  top: 50%;
+      margin-left: 13px;
+    margin-top: -9px;
+  z-index: 1;
+  color: red;
+}
+
+input#search{
+  padding-left:35px;
+}
+
+//button
 
 .button-circle{
   display:block;

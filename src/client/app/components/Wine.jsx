@@ -120,7 +120,7 @@ class Wine extends Component {
 			wine: wine,
 			isLoading: false
 		});
-
+		console.log(wine);
 				//javascript event.message
 		}, function (e) {
 			that.setState({
@@ -194,7 +194,7 @@ class Wine extends Component {
 
 		function renderMessage() {
 			if (isLoading) {
-				return <h3 className="text-center">...</h3>
+				return <h3 className="text-center loading">...</h3>
 			} else if (fireWine && location) {
 				return <WineMessageFire fireWine={fireWine} location={location}/>
 			} else if (wine && location) {

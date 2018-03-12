@@ -27,7 +27,10 @@ class WineForm extends Component {
 			
 			<div className="small-6 small-centered">
 				<form onChange={this.onFormSubmit}>
-					<input type="search" ref="location" placeholder="Search your wines.."/>
+					<div className="container-input">
+						<i className="fa fa-search icon fa-sm"></i>
+						<input type="search" id="search" ref="location" placeholder="Search your wines.."/>
+					</div>
 				</form>	
 			</div>
 			
@@ -37,8 +40,5 @@ class WineForm extends Component {
 
 export default WineForm;
 
-// value={this.state.value}
-//         onChange={this.handleChange} onSubmit
-//<button className="button expanded hollow">Get Wine</button>
-//this.refs.location.value = ''; // clear value
+
 

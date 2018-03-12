@@ -42,11 +42,10 @@ class WineFields extends Component {
 			
 			if(params.id.startsWith("-")){
 				var fireWine = LocalStorage.getFireWines();
-				console.log(fireWine, 'firewine');
+				
 				var values = fireWine.filter(function (el){
 				
 					if(el.id == params.id){
-	        			console.log(values, 'work');
 	        			return true;
         			} else {
 						return false;

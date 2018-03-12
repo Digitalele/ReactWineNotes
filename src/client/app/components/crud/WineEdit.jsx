@@ -18,7 +18,7 @@ class Fields extends Component {
 	  }
 
 	  	onClick(e){
-    		//setTimeout(function(){ window.location.hash = '#/appcrud'; }, 2000);	
+    		setTimeout(function(){ window.location.hash = '#/appcrud'; }, 2000);	
   		}
 
 		editWine (event) {
@@ -63,7 +63,7 @@ class Fields extends Component {
 			wineType, 
 			wineVineyard,
 			wineBio } = this.props;
-
+			console.log(wineBio, 'checkbox');
 			const selectOptions = this.props.wineType.split(', ');
 			selectOptions.push("White Wines","Rosè Wines", "Red Wines");
 			//if props.winetype exist in array delete it for show the other item
@@ -152,6 +152,7 @@ class Fields extends Component {
 				            ref={(input) => (this.organic = input)} 
 				            type="checkbox"
 							defaultChecked={wineBio}
+							value={wineBio}
 				            />
 					  </section>
 					</div>

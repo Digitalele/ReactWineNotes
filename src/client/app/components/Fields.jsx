@@ -20,8 +20,7 @@ class Fields extends Component {
 
 	  	onClick(e){
     		this.setState({showReply: !this.state.showReply});
-    		setTimeout(function(){ window.location.hash = '#/appcrud'; }, 2000);
-    		
+    		setTimeout(function(){ window.location.hash = '#/appcrud'; }, 1000);	
   		}
 
 		createWine (event) {
@@ -59,7 +58,7 @@ class Fields extends Component {
 			wineVineyard,
 			wineBio } = this.props;
 
-			console.log(this.props);
+			console.log(wineBio, 'checkbox');
 
 			const selectOptions = this.props.wineType.split(', ');
 			selectOptions.push("White Wines","Rosè Wines", "Red Wines");
@@ -149,6 +148,7 @@ class Fields extends Component {
 				            ref={(input) => (this.organic = input)} 
 				            type="checkbox"
 							defaultChecked={wineBio}
+							value={wineBio}
 				            />
 					  </section>
 					</div>

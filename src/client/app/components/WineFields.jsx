@@ -8,16 +8,14 @@ import firebase, { auth, provider } from 'Firebase';
 
 class WineFields extends Component {
 
-	constructor(props) {    /* Note, is possible passed pros into the constructor in order to be used constructor(props)super(props)*/ 
+	constructor(props) {  
         super(props)
 
         this.login = this.login.bind(this); 
   		this.logout = this.logout.bind(this); 
 
         this.state = {
-	      currentItem: '',
 	      username: '',
-	      items: [],
 	      user: null 
 		}
     }
@@ -27,7 +25,12 @@ class WineFields extends Component {
 	}
 
 	logout() {
-	  // we will add the code for this in a moment, but need to add the method now or the bind will throw an error
+		auth.signOut()
+	    .then(() => {
+	      this.setState({
+	        user: null
+	      });
+	    });
 	}
 
 	login() {
@@ -39,6 +42,15 @@ class WineFields extends Component {
 	      });
 	    });
 	}
+
+	//
+		componentDidMount() {
+	  	auth.onAuthStateChanged((user) => {
+	    	if (user) {
+	     	this.setState({ user });
+	    	} 
+	  	});
+	  }
 
 	render () {
 
@@ -143,9 +155,7 @@ class WineFields extends Component {
 
 			<div className="wrapper small-6 large-centered columns">
 
-				{/*<h1 className="text-center subheader">Wine Searcher Auth</h1>*/}
-
-				{/*{this.state.user ?	*/}  	
+			{this.state.user ?	
 				  	<div>
 				  		<button onClick={this.logout}>{/*Log Out*/}</button>
 				  		<div className="">
@@ -155,12 +165,14 @@ class WineFields extends Component {
 							{renderForm()}	 
 						</div>	    	
 				  	</div>              
-				  {/* :*/}
+				:
+
 				   <div className="small-9 columns social">
+				   <h1 className="text-center subheader">You must login for save wines!</h1>
 				   	<button className="button social-btn" onClick={this.login}>Google Sign In</button>              
 				   	<button className="button social-btn" >Facebook Sign In</button>              
 				   </div>
-				  {/*}*/}
+				  }
 
 			</div>	
 
