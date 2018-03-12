@@ -167,10 +167,15 @@ class WineFields extends Component {
 				  	</div>              
 				:
 
-				   <div className="small-9 columns social">
-				   <h1 className="text-center subheader">You must login for save wines!</h1>
-				   	<button className="button social-btn" onClick={this.login}>Google Sign In</button>              
-				   	<button className="button social-btn" >Facebook Sign In</button>              
+				   <div className="">
+					   	<h1 className="page-title text-center main-title">You must login for save wines!</h1>
+
+					   	<div className="small-8 large-centered columns">
+					   		<button className="button social-btn" onClick={this.login}>Google Sign In</button>              
+					   		<button className="button social-btn" >Facebook Sign In</button>
+					   	</div>
+
+					                 
 				   </div>
 				  }
 
@@ -186,6 +191,5 @@ class WineFields extends Component {
 export default WineFields;
 
 
-
-
+ 
 

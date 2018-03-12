@@ -39,15 +39,15 @@
 .page-title{
 color: #fff;
     margin-top: 3em;
-    margin-bottom: 1em;
-    font-size: 52px;
+    margin-bottom: 0.5em;
+    font-size: 42px;
     letter-spacing: 10px;
     font-weight: 300;
 }
 
 .acc-title{
 	color:#ff4343;
-	    margin: 13px auto;
+	margin: 13px auto;
     font-size: 18px;
     letter-spacing: 5px;
     font-weight: 400;

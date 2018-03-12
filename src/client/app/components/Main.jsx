@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Nav from 'Nav'
 import Footer from 'Footer'
+
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 
 var Main = (props) => {
@@ -31,17 +32,3 @@ export default Main;
 
 
 
-
-
-
-// var Main = React.createClass({
-// 	render: function() {
-// 		return (
-// 			<div>
-// 				<Nav/>
-// 				<h2>Main Component</h2>
-// 				{this.props.children}
-// 			</div>
-// 		);
-// 	}
-// });

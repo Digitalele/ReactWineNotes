@@ -24,8 +24,8 @@ $color_mountain_mist_approx: #999;
 .container-input .icon{
   position: absolute;
   top: 50%;
-      margin-left: 13px;
-    margin-top: -9px;
+  margin-left: 13px;
+  margin-top: -9px;
   z-index: 1;
   color: red;
 }
@@ -70,7 +70,8 @@ input#search{
 }
 
 .social-btn{
-  margin:auto;
+  margin-left:15px;
+  width:45%;
 }
 
 ul{
