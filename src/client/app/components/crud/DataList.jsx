@@ -6,11 +6,11 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 class DataList extends Component {
   
     render() {
-    	var {dataList} = this.props;
+    	var {dataList, userKey} = this.props;
     	var renderList = () => {
     		return dataList.map((wine) => {
     			return (      
-              <WineList key={wine.id} {...wine}/>
+              <WineList key={wine.id} userKey={userKey} {...wine}/>
 					);
     		});
     	};

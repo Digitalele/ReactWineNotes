@@ -51,10 +51,6 @@ class AppCrud extends Component {
             that.setState({dataList: crud});
         
             let setFireWinesStorage = LocalStorage.setFireWines(that.state.dataList);
-            console.log(setFireWinesStorage + 'update set wine crud');
-
-              
-            //console.log(that.state.dataList);
 
             }, function (e) {
                         //state error
@@ -74,11 +70,11 @@ class AppCrud extends Component {
   
     render() {
 
-        var {dataList, username} = this.state; //pull the states
+        var {dataList, username, user} = this.state; //pull the states
             function crud(){
-                
+                var userKey = user.uid;
                 if(dataList){
-                    return(<DataList dataList={dataList}/>)
+                    return(<DataList dataList={dataList} userKey={userKey}/>)
 
                 }
             }

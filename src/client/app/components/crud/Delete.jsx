@@ -6,9 +6,10 @@ class Delete extends Component {
 
 	constructor(props) {    /* Note, is possible passed pros into the constructor in order to be used constructor(props)super(props)*/ 
         super(props)
-
+        // call n time for n wines not good
+        let key = props.userKey;
         this.deleteWine = this.deleteWine.bind(this);
-        this.theWine = ref.child('wines');
+        this.theWine = ref.child('users/'+key);
 
     }
 

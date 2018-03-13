@@ -10,7 +10,7 @@ class WineList extends Component {
     }
 
     render() {
-    	var {name, year, varietal, type, organic, id} = this.props;
+    	var {name, year, varietal, type, organic, id, userKey} = this.props;
         if(organic){
                 var bio = <img style={img} src="http://www.einsteinjournal.it/wp-content/uploads/2017/02/BIO-agricoltura-biologica-logo-europeo.jpg" alt="bio"/>;
             } else {bio = 'none';}
@@ -22,7 +22,7 @@ class WineList extends Component {
                     <td>{type}</td>
                     <td>{bio}</td>
                     <Upgrade id={id}/>
-                    <Delete id={id}/>
+                    <Delete id={id} userKey={userKey}/>
               </tr>
         );
     }
