@@ -21,7 +21,7 @@ class WineList extends Component {
                     <td>{varietal}</td>
                     <td>{type}</td>
                     <td>{bio}</td>
-                    <Upgrade id={id}/>
+                    <Upgrade id={id} userKey={userKey}/>
                     <Delete id={id} userKey={userKey}/>
               </tr>
         );

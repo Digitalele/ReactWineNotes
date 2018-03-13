@@ -5,14 +5,14 @@ import {ref} from 'Firebase'
 
 class Fields extends Component {
 
-	constructor () {
-	    super()
-
+	constructor (props) {
+	    super(props)
+	    let key = props.userKey;
 	    this.state = {
       		
     	}
 
-		this.dbWine = ref.child('/wines/');
+		this.dbWine = ref.child('/users/'+key);
 	    this.editWine = this.editWine.bind(this);
 
 	  }
@@ -38,7 +38,7 @@ class Fields extends Component {
 			
 			if (wineInfo.name.length !== 0) {
 				var { wineId } = this.props;
-				console.log(wineId, 'id update');
+				console.log(this.dbWine, 'id update');
       			//this.dbWine.push(wineInfo);
       			var updates = {};
       			var newPostKey = this.dbWine.push().key;

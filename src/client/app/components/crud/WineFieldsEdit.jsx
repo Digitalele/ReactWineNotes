@@ -55,6 +55,7 @@ class WineFields extends Component {
 
     			var wineInfo = {
     				'wineId': values[0].id,
+    				'userKey': params.userKey,
 				    'wineName': values[0].name.replace(/\./g,''),
 				    'wineRegion': values[0].region,
 				    'wineYear': values[0].year,
@@ -71,6 +72,7 @@ class WineFields extends Component {
 
 	    			<WineEdit
 	    				wineId={wineInfo.wineId} 
+	    				userKey={wineInfo.userKey} 
 	    				wineName={wineInfo.wineName}
 		    			wineRegion={wineInfo.wineRegion}
 		    			wineYear={wineInfo.wineYear}

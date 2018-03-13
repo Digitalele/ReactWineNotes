@@ -31,7 +31,7 @@ ReactDOM.render(
     <Route path="examples" component={Examples}/>
     <Route path="appcrud" component={AppCrud}/>
     <Route path="winefields(/:id)" component={WineFields} />
-    <Route path="winefieldsedit(/:id)" component={WineFieldsEdit} />
+    <Route path="winefieldsedit(/:id)(/:userKey)" component={WineFieldsEdit} />
     <IndexRoute component={Wine}/>
   </Route>
 </Router>,
