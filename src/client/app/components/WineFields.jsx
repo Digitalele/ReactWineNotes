@@ -20,10 +20,6 @@ class WineFields extends Component {
 		}
     }
 
-	handleChange(e) {
-	  /* ... */
-	}
-
 	logout() {
 		auth.signOut()
 	    .then(() => {
@@ -43,11 +39,10 @@ class WineFields extends Component {
 	    });
 	}
 
-	//
-		componentDidMount() {
+	componentDidMount() {
 	  	auth.onAuthStateChanged((user) => {
 	    	if (user) {
-	     	this.setState({ user });
+	     		this.setState({ user });
 	    	} 
 	  	});
 	  }
@@ -60,7 +55,6 @@ class WineFields extends Component {
 			if(params.id){
 			if(params.id.startsWith("-")){
 				var fireWine = LocalStorage.getFireWines();
-				console.log(fireWine, 'firewine');
 				var values = fireWine.filter(function (el){
 					console.log(el.id, params.id);
         		if(el.id == params.id){
@@ -173,8 +167,8 @@ class WineFields extends Component {
 					   	<h1 className="page-title text-center main-title">You must login for save wines!</h1>
 
 					   	<div className="small-8 large-centered columns">
-					   		<button className="button social-btn" onClick={this.login}>Google Sign In</button>              
-					   		<button className="button social-btn" >Facebook Sign In</button>
+					   		<button className="button social-btn btn-gg" onClick={this.login}>Google Sign In</button>              
+					   		<button className="button social-btn btn-fb" >Facebook Sign In</button>
 					   	</div>
 
 					                 

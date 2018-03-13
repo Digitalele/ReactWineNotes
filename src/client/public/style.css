@@ -6,8 +6,16 @@
 	position: relative;
 }
 
-.menu li a{
+.menu li{
 	letter-spacing: 1px;
+    margin-right: 20px;
+}
+
+.menu li a{
+  color:white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
 }
 
 .menu li a:hover{
@@ -22,11 +30,11 @@
 }
 
 .wineForm{
-	background:
-#ff4343;
-	min-height: 100vh;
+	background:url(imgs/grapes.png), #ff4343;
+	min-height: 95vh;
 	 background-repeat: no-repeat;
-    background-size: cover;
+  background-position: 50% 52%;
+    background-size: 30%;
     position: relative;
 }
 
@@ -34,13 +42,14 @@
 .main-title{
 	color:#fff;
 	font-weight: 300;
+  
 }
 
 .page-title{
 color: #fff;
     margin-top: 3em;
     margin-bottom: 0.5em;
-    font-size: 42px;
+    font-size: 48px;
     letter-spacing: 10px;
     font-weight: 300;
 }

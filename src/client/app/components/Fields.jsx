@@ -1,26 +1,31 @@
 import React, {Component} from 'react'
 import Modal from 'Modal'
 import ModalError from 'ModalError'
-import {ref} from 'Firebase'
-
-
+import {ref, auth, provider} from 'Firebase'
 
 class Fields extends Component {
 
 	constructor () {
 	    super()
-
 	    this.state = {
       		showReply: false,
       		showReplyError: false
     	}
-
 		this.dbWine = ref.child('wines');
 	    this.createWine = this.createWine.bind(this);
-
 	  }
 
-		createWine (event) {
+	  componentDidMount() {
+	  	auth.onAuthStateChanged((user) => {
+	    	if (user) {
+	     		this.setState({ user });
+	     		//create instance for db wine users 
+	     		this.dbWineUser = ref.child('users/'+this.state.user.uid);
+	    	} 
+	  	});
+	  }
+
+	createWine (event) {
 		    event.preventDefault()
 		    console.log('add new wine')
 		    const wineInfo = {
@@ -34,10 +39,16 @@ class Fields extends Component {
 		      organic: this.organic.value
 		    }
 		    
-		    console.log(wineInfo);
 			
 			if (wineInfo.name.length !== 0) {
+				
+				console.log(this.state.user.uid, 'user in key');
+				//push wine in user
+				this.dbWineUser.push(wineInfo);
+
+				//push wine in general db wine
       			this.dbWine.push(wineInfo);
+
       			this.setState({showReply: !this.state.showReply});
       			setTimeout(function(){ window.location.hash = '#/appcrud'; }, 1000);
 
@@ -147,9 +158,9 @@ class Fields extends Component {
 					    <input
 				            ref={(input) => (this.organic = input)} 
 				            type="checkbox"
-							defaultValue={wineBio}
+							defaultChecked={wineBio}
 							value={wineBio}
-							checkedLink={wineBio}
+						
 				            />
 					  </section>
 					</div>
@@ -181,30 +192,4 @@ class Fields extends Component {
 export default Fields;
 
 
-
-
-
-
-
-
-// <div className="large-3 columns">
-					// 	<h3 className="text-center page-title">Wine type</h3>
-					// 	<input ref={(input) => (this.type = input)} type="text" defaultValue={wineType} placeholder="Type"/>
-					// </div>
-
-// var array = ['A', 'B', 'C']; // Test
-			// var search_term = 'B';
-
-			// for (var i=array.length-1; i>=0; i--) {
-			//     if (array[i] === search_term) {
-			//         array.splice(i, 1);
-			//         // break;       //<-- Uncomment  if only the first term has to be removed
-			//     }
-			// }
-
-//push with key firebase, set without
-// if (wineInfo.name.length !== 0) {
-//       			this.dbWine.child(wineInfo.name).push({
-// 					wineInfo
-//      			 });
 

@@ -183,29 +183,3 @@ export default Fields;
 
 
 
-
-
-
-
-
-// <div className="large-3 columns">
-					// 	<h3 className="text-center page-title">Wine type</h3>
-					// 	<input ref={(input) => (this.type = input)} type="text" defaultValue={wineType} placeholder="Type"/>
-					// </div>
-
-// var array = ['A', 'B', 'C']; // Test
-			// var search_term = 'B';
-
-			// for (var i=array.length-1; i>=0; i--) {
-			//     if (array[i] === search_term) {
-			//         array.splice(i, 1);
-			//         // break;       //<-- Uncomment  if only the first term has to be removed
-			//     }
-			// }
-
-//push with key firebase, set without
-// if (wineInfo.name.length !== 0) {
-//       			this.dbWine.child(wineInfo.name).push({
-// 					wineInfo
-//      			 });
-

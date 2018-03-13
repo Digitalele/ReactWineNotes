@@ -91,12 +91,7 @@ class WineFields extends Component {
 		<div className="row">
 
 			<div className="wrapper small-6 large-centered columns">
-
-				{/*<h1 className="text-center subheader">Wine Searcher Auth</h1>*/}
-
-				{/*{this.state.user ?	*/}  	
-				  	<div>
-				  		<button onClick={this.logout}>{/*Log Out*/}</button>
+				  	<div>			  	
 				  		<div className="">
 							<h1 className="text-center main-title">
 								Edit your Wine			
@@ -104,9 +99,6 @@ class WineFields extends Component {
 							{renderForm()}	 
 						</div>	    	
 				  	</div>              
-				  {/* :*/}
-					{/*private area*/}
-				  {/*}*/}
 
 			</div>	
 
@@ -116,11 +108,6 @@ class WineFields extends Component {
 	}
 };
 
-// var btn-fb = {
-// 	color:'white',
-// 	backgroundColor:'blue',
-// 	style={}
-// };
 
 
 

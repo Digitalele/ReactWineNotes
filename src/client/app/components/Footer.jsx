@@ -10,11 +10,19 @@ class Footer extends Component {
   render () {
      return (
     <div>
-        <footer></footer>
+      <div className="small-12 small-centered text-center">
+          <footer style={mainFooter}>Crafted with <i className="fa fa-heart"></i> by Gabriele Dolfi</footer>
+      </div>
     </div>
     );
   }
 }
+
+const mainFooter = {
+  padding: '13px',
+  background: '#ff4343',
+  color:'white'
+};
 
 export default Footer;
 

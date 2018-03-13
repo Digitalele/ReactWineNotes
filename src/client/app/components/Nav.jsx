@@ -66,24 +66,28 @@ class Nav extends Component {
      <div className="top-bar-trasp">
         <div className="top-bar-left">
           <ul className="menu">  
-           <li className="menu-text"><h1>Winery App</h1></li> 
-            <li>  
-              <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Wine</IndexLink>              
-            </li>
-            <li>
-              <Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link>
-            </li>
-            <li>
-              <Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link>
-            </li>
-            <li>
-              <Link to="/appcrud" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Crud</Link>
-            </li>
+           <li ><img style={logo} src="public/imgs/grapes.png"/></li>  
           </ul>    
         </div>
         <div className="top-bar-right">
            <form >
               <ul className="menu">
+
+                  <li>  
+                    <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Wine</IndexLink>              
+                  </li>
+
+                  <li>
+                    <Link to="/appcrud" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Crud</Link>
+                  </li>
+
+                  <li>
+                    <Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link>
+                  </li>
+
+                  <li>
+                    <Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link>
+                  </li>   
 
                   {this.state.user ? 
                   <li>
@@ -101,6 +105,14 @@ class Nav extends Component {
     );
   }
 }
+
+const logo = {
+  width: '60px',
+  padding: '8px',
+  border:'2px solid #FF7B7B',
+  borderRadius:'50%',
+  margin:'0 0 0 15px',
+};
 
 export default Nav;
 

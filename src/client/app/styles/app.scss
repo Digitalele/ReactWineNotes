@@ -1,6 +1,6 @@
 //colors
 $red: red;
-$color_mexican_red_approx: brown;
+$color_mexican_red_approx: #d62d20;
 $color_mercury_approx: #e6e6e6;
 $color_romance_approx: #fefefe;
 $color_cod_gray_approx: #0a0a0a;
@@ -35,6 +35,10 @@ input#search{
 }
 
 //button
+
+.menu .button{
+  margin-top:0;
+}
 
 .button-circle{
   display:block;
@@ -74,6 +78,7 @@ input#search{
   width:45%;
 }
 
+
 ul{
   margin-left: 0;
 }
@@ -102,6 +107,7 @@ input[type=search] {
   background-color: $color_mexican_red_approx;
   &:hover {
     background-color: $red;
+    border:1px solid white;
   }
   &.hollow {
     color: $red;
@@ -264,6 +270,16 @@ link.list-group {
 }
 .divTableBody {
   display: table-row-group;
+}
+
+
+//
+.btn-fb{
+  background:#3B5998;
+}
+
+.btn-gg{
+   background:$color_mexican_red_approx;
 }
 
 

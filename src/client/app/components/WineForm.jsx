@@ -26,10 +26,10 @@ class WineForm extends Component {
 		return (
 			
 			<div className="small-6 small-centered">
-				<form onChange={this.onFormSubmit} autocomplete="off">
+				<form onChange={this.onFormSubmit}>
 					<div className="container-input">
 						<i className="fa fa-search icon fa-sm"></i>
-						<input type="text" id="search" ref="location" placeholder="Search your wines.." autocomplete="off" />
+						<input type="text" id="search" ref="location" placeholder="Search your wines.." autoComplete="off" />
 					</div>
 				</form>	
 			</div>

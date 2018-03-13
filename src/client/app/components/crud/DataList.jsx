@@ -47,32 +47,3 @@ class DataList extends Component {
 
 export default DataList;
 
-
-// var React = require('react');
-// var Todo = require('Todo');
-
-// var TodoList = React.createclassName({
-// 	//for every todo in array we have to render something different
-// 	render: function () {
-// 		var {todos} = this.props;
-// 		var renderTodos = () => {
-// 			return todos.map((todo) => {
-// 				return (
-// 					<Todo key={todo.id} {...todo}/>
-// 				);
-// 			});
-// 		};
-// 		return (
-// 			<div>
-// 				{renderTodos()}
-// 			</div>
-// 		)
-// 	}
-// });
-
-// module.exports = TodoList;
-
-// //key prop for multiple instance components for keep track single items
-
-// // {spread operator spred out to indivdual props}
-// //container list
