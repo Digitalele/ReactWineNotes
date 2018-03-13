@@ -10,8 +10,7 @@ import firebase, { auth, provider } from 'Firebase';
 class AppCrud extends Component {
 	constructor() {    /* Note, is possible passed pros into the constructor in order to be used constructor(props)super(props)*/ 
         super()
-        
-        this.theWine = ref.child('wines');
+           
         this.state = {
             dataList: [],
             user: null,
@@ -20,48 +19,50 @@ class AppCrud extends Component {
     }
 
 
-
     componentDidMount = () =>  {
 
         auth.onAuthStateChanged((user) => {
-                if (user) {
-                    this.setState({ 
-                        user,
-                        username: user.displayName
-                    });
-                } 
-        });
+            if (user) {
+                this.setState({ 
+                    user,
+                    username: user.displayName
+                });
 
-        var that = this;
-        this.theWine.orderByChild('name')           //ORDERBY
-            .limitToFirst(30)
-            .on("value", function(snap) {
+            this.theWine = ref.child('users/'+this.state.user.uid);
+
+            var that = this;
+
+            this.theWine.orderByChild('name')
+                .limitToFirst(30)
+                .on("value", function(snap) {
                        
             var dataVal = snap.val() || {};
             const crud =  []; 
-        Object.keys(dataVal).forEach((data) => {      
-                     
-            crud.push({
-                id: data,
-                ...dataVal[data]        
-            });
 
-        }); 
+            Object.keys(dataVal).forEach((data) => {      
+                         
+                crud.push({
+                    id: data,
+                    ...dataVal[data]        
+                });
 
-        that.setState({
-                 dataList: crud  
-             });
+            }); 
+
+            that.setState({dataList: crud});
         
-        let setFireWinesStorage = LocalStorage.setFireWines(that.state.dataList);
-        console.log(setFireWinesStorage + 'update set wine crud');
+            let setFireWinesStorage = LocalStorage.setFireWines(that.state.dataList);
+            console.log(setFireWinesStorage + 'update set wine crud');
 
               
-        //console.log(that.state.dataList);
+            //console.log(that.state.dataList);
 
-        }, function (e) {
-                    //state error
-                  console.log("The read failed: " + e.code);
-            });
+            }, function (e) {
+                        //state error
+                      console.log("The read failed: " + e.code);
+                });
+            } 
+       
+        });
        
     } 
 

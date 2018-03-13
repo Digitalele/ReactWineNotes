@@ -15,7 +15,7 @@ class Fields extends Component {
 	    this.createWine = this.createWine.bind(this);
 	  }
 
-	  componentDidMount() {
+	 componentDidMount() {
 	  	auth.onAuthStateChanged((user) => {
 	    	if (user) {
 	     		this.setState({ user });
@@ -57,6 +57,11 @@ class Fields extends Component {
 				console.log("name cant be empty")
 			}
 		}
+
+		 //unomunt bind firebase
+    componentWillUnmount() {
+        this.dbWine.off();
+    }
 
 	render () {
 
