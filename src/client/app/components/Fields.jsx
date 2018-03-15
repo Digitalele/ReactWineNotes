@@ -5,14 +5,20 @@ import {ref, auth, provider} from 'Firebase'
 
 class Fields extends Component {
 
-	constructor () {
-	    super()
+	constructor (props) {
+	    super(props)
 	    this.state = {
       		showReply: false,
-      		showReplyError: false
+      		showReplyError: false,
+      		isChecked: this.props.wineBio
+
     	}
 		this.dbWine = ref.child('wines');
 	    this.createWine = this.createWine.bind(this);
+
+	    //checkbox
+	    this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
+
 	  }
 
 	 componentDidMount() {
@@ -25,7 +31,13 @@ class Fields extends Component {
 	  	});
 	  }
 
-	createWine (event) {
+	 handleCheckboxChange(event) { 
+	 	console.log("checkbox changed!", event, this.state.isChecked);
+        this.setState({isChecked: event.target.checked});
+        
+    }
+
+	createWine(event) {
 		    event.preventDefault()
 		    console.log('add new wine')
 		    const wineInfo = {
@@ -36,12 +48,15 @@ class Fields extends Component {
 		      type: this.type.value,
 		      varietal: this.varietal.value,
 		      notes: this.notes.value,
-		      organic: this.organic.value
+		      organic: this.organic.checked
 		    }
 		    
 			
 			if (wineInfo.name.length !== 0) {
 				
+				
+				console.log(this.state.isChecked, 'final');
+
 				console.log(this.state.user.uid, 'user in key');
 				//push wine in user
 				this.dbWineUser.push(wineInfo);
@@ -73,8 +88,6 @@ class Fields extends Component {
 			wineType, 
 			wineVineyard,
 			wineBio } = this.props;
-
-			console.log(wineBio, 'checkbox');
 
 			const selectOptions = this.props.wineType.split(', ');
 			selectOptions.push("White Wines","Rosè Wines", "Red Wines");
@@ -163,8 +176,10 @@ class Fields extends Component {
 					    <input
 				            ref={(input) => (this.organic = input)} 
 				            type="checkbox"
-							defaultChecked={wineBio}
-							value={wineBio}
+				            onChange={this.handleCheckboxChange}
+
+							defaultChecked={this.state.isChecked}
+							checked={this.state.isChecked}
 						
 				            />
 					  </section>

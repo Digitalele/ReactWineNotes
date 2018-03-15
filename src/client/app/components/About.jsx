@@ -9,7 +9,7 @@ class About extends Component {
         return (
         	<div>
 	            <div style={marginTop} className="small-6 small-centered">
-	            	<div className="callout alert text-center">
+	            	<div className="text-center">
 					  	<h3 className="text-center page-title">
 							About Wine Search
 						</h3>
