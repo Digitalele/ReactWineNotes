@@ -196,7 +196,7 @@ class Fields extends Component {
 				  </div>
 				</div>
 
-				<button type="submit" className="button-circle button-add"><i className="fa fa-plus"></i></button>
+				<button type="submit" className="button-circle button-add hvr-radial-out text-center"><i className="fa fa-plus"></i></button>
 				{this.state.showReply && < Modal / >}
 				{this.state.showReplyError && < ModalError / >}
 			</form>

@@ -6,7 +6,7 @@ import {Route, Router, IndexRoute, hashHistory} from 'react-router'
 import Main from 'Main'
 import Wine from 'Wine'
 import About from 'About'
-import Examples from 'Examples'
+import User from 'User'
 import WineFields from 'WineFields'
 import AppCrud from 'AppCrud'
 import WineFieldsEdit from 'WineFieldsEdit'
@@ -28,7 +28,7 @@ ReactDOM.render(
 <Router history={hashHistory}>
   <Route path="/" component={Main}>//if / then IndexRout else about 
     <Route path="about" component={About}/>
-    <Route path="examples" component={Examples}/>
+    <Route path="user" component={User}/>
     <Route path="appcrud" component={AppCrud}/>
     <Route path="winefields(/:id)" component={WineFields} />
     <Route path="winefieldsedit(/:id)(/:userKey)" component={WineFieldsEdit} />

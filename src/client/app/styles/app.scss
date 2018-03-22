@@ -9,6 +9,15 @@ $color_apricot_approx: #ee8176;
 $color_stack_approx: #8a8a8a;
 $color_mountain_mist_approx: #999;
 
+//callout
+.large{
+  margin:0;
+}
+
+.callout.secondary{
+  background-color: rgba(255,255,255,0.85);
+}
+
 //loader
 .loading{
   color:white;
@@ -27,15 +36,29 @@ $color_mountain_mist_approx: #999;
   margin-left: 13px;
   margin-top: -9px;
   z-index: 1;
-  color: red;
+  color: rgb(255,112,113);
 }
 
 input#search{
-  padding-left:35px;
+      padding: 23px 0px 23px 35px;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16), 0 0 0 2px rgba(0,0,0,0.08);
+    border: honeydew;
+    display: block;
+    width: 100%;
+    /* padding: 16px; */
+    font-size: 16px;
+    border-radius: 2px;
+    outline: none;
 }
 
-//button
 
+input#search::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(255,112,113);
+    opacity: 1; /* Firefox */
+}
+
+
+//button
 .menu .button{
   margin-top:0;
 }
@@ -282,19 +305,83 @@ link.list-group {
    background:$color_mexican_red_approx;
 }
 
+// dot animation loading
+div#wave {
+  position: relative;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+div#wave .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #fff;
+  animation: wave 1.3s linear infinite;
+}
+div#wave .dot:nth-child(2) {
+  animation-delay: -1.1s;
+}
+div#wave .dot:nth-child(3) {
+  animation-delay: -0.9s;
+}
 
-// <div class="table" style="border: 2px solid #000;" >
-  
-//   <div class="divTableBody">  
-//     <div class="divTableRow">
-//       <div class="divTableCell"></div>
-//       <div class="divTableCell"></div>
-//       <div class="divTableCell"></div>
-//       <div class="divTableCell"></div>
-//       <div class="divTableCell"></div>
-//       <div class="divTableCell"></div>
-    
-//     </div>
-//   </div>
-// </div>
+@keyframes wave {
+  0%, 60%, 100% {
+    transform: initial;
+  }
+  30% {
+    transform: translateY(-15px);
+  }
+}
+
+
+//buttun animation
+/* Radial Out */
+.hvr-radial-out {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-radial-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #eee;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {
+  color: white;
+}
+.hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+
+
+
 

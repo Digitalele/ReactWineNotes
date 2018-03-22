@@ -39,7 +39,7 @@ var config = {
         WineForm: 'src/client/app/components/WineForm.jsx',
         WineMessage: 'src/client/app/components/WineMessage.jsx',
         WineMessageFire: 'src/client/app/components/WineMessageFire.jsx',
-        Examples: 'src/client/app/components/Examples.jsx',
+        User: 'src/client/app/components/User.jsx',
         ErrorModal: 'src/client/app/components/ErrorModal.jsx',
         About: 'src/client/app/components/About.jsx',
         Modal: 'src/client/app/components/Modal.jsx',

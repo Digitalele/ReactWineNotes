@@ -6,20 +6,22 @@ class WineMessageFire extends Component {
 	
 	createListFire (fireWine) {
 		if(fireWine !== undefined){
-		const outputfireWine = []; 
-		    // organic
-        for(var i = 0; i < fireWine.length; i++){
-        	outputfireWine.push(	
-        	<li className="list-group-item" key={i}>
-              <Link to={{pathname:`/winefields/${fireWine[i].id}`}}>{fireWine[i].name}</Link>
-              	<ul className="inline-list no-bullet">
-				  <li><a href="#">{fireWine[i].type}</a></li>
-				  <li><a href="#">{fireWine[i].varietal}</a></li>
-				  <li><a href="#">{fireWine[i].year}</a></li>
-				</ul>
-        	</li>
-        	)
-        }
+			const outputfireWine = []; 
+	        for(var i = 0; i < fireWine.length; i++){
+			if(fireWine[i].organic){
+		        		var bio = <img src="public/imgs/bio.jpg" width="30" alt="bio"/>;
+		        	}
+	        	outputfireWine.push(	
+	        	<li className="list-group-item" key={i}>
+	              <Link to={{pathname:`/winefields/${fireWine[i].id}`}}>{fireWine[i].name} {bio}</Link>
+	              	<ul className="inline-list no-bullet">
+					  <li><a href="#">{fireWine[i].type}</a></li>
+					  <li><a href="#">{fireWine[i].varietal}</a></li>
+					  <li><a href="#">{fireWine[i].year}</a></li>
+					</ul>
+	        	</li>
+	        	)
+	        }
         return outputfireWine;
     	}
     }

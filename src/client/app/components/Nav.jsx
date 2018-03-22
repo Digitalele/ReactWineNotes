@@ -62,7 +62,7 @@ class Nav extends Component {
                   </li>
 
                   <li>
-                    <Link to="/appcrud" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Crud</Link>
+                    <Link to="/appcrud" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Wines</Link>
                   </li>
 
                   <li>
@@ -73,7 +73,7 @@ class Nav extends Component {
 
                   <span>
                     <li>
-                      <Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>User</Link>
+                      <Link to="/user" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>User</Link>
                     </li> 
 
                     <li>

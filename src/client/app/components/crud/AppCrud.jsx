@@ -8,7 +8,8 @@ import firebase, { auth, provider } from 'Firebase';
 
 
 class AppCrud extends Component {
-	constructor() {    /* Note, is possible passed pros into the constructor in order to be used constructor(props)super(props)*/ 
+	
+    constructor() {  
         super()
            
         this.state = {
@@ -63,9 +64,9 @@ class AppCrud extends Component {
     } 
 
     //unomunt bind firebase
-    componentWillUnmount() {
-        this.theWine.off();
-    }
+    // componentWillUnmount() {
+    //     this.theWine.off();
+    // }
 
   
     render() {
