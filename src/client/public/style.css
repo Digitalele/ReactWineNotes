@@ -1,9 +1,87 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
 
+
+html, body{
+  overflow:hidden;
+  height:100%;
+}
+
+/*callout*/
+.large{
+  margin:0;
+}
+
+.callout.secondary{
+  background-color: rgba(255,255,255,0.85);
+}
+
+/*loader*/
+.loading{
+  color:white;
+}
+
+/*form*/
+.container-input{
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container-input .icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 13px;
+  margin-top: -9px;
+  z-index: 1;
+  color: rgb(255,112,113);
+}
+
+input#search{
+    padding: 23px 0px 23px 35px;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16), 0 0 0 2px rgba(0,0,0,0.08);
+    border: honeydew;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 2px;
+    outline: none;
+}
+
+
+input#search::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(255,112,113);
+    opacity: 1; /* Firefox */
+}
+
+
+button
+.responsive-menu .button{
+  margin-top:0;
+}
+
+
+ul{
+  margin-left: 0;
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 80%;
+  text-align: center;
+}
+
+
 .top-bar-trasp{
 	background: 0 0;
 	z-index: 10;
 	position: relative;
+}
+
+.logo{
+  width: 60px;
 }
 
 .menu li{
@@ -31,13 +109,16 @@
 
 .wineForm{
 	background:url(imgs/grapes.png), #ff4343;
-	min-height: 95vh;
+	height: 100vh;
 	 background-repeat: no-repeat;
   background-position: 50% 52%;
     background-size: 30%;
     position: relative;
 }
 
+.list-group-item img{
+      border-radius: 50px;
+    }
 
 .main-title{
 	color:#fff;
@@ -89,6 +170,15 @@ color: #fff;
 .top-bar-right {
     margin-top: 30px;
     margin-right: 20px;
+}
+
+.footer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
 }
 
 /*Accordion*/
@@ -154,6 +244,75 @@ color: #fff;
   line-height: 1.5;
  
 }
+
+
+/*responsive*/
+
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 820px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+
+    .wineForm{
+      background:url('imgs/grapes.png'), #ff4343;
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-position: 50% 25%;
+      background-size: 70%;
+      position: relative;
+      object-fit: cover; 
+    }
+
+    .page-title{
+      font-size: 66px;
+    }
+  
+    input#search{
+      height: 80px;
+      font-size:24px;
+      padding: 23px 0px 23px 35px;
+    }
+
+    .list-group-item>a{
+      font-size:18px;
+    }
+
+    .list-group-item img{
+      width:40px;
+      border-radius: 50px;
+    }
+
+    .inline-list a{
+      font-size:16px;
+    }
+
+    .logo{
+      width: 100px;
+    }
+
+    .responsive li{
+      list-style: none;
+    }
+
+    .responsive a{
+      font-size:52px;
+      letter-spacing:3px;
+      color:#FF7B7B;
+      margin-bottom:1.5em;
+    }
+
+
+}
+
+
+
+
+
 
 
 

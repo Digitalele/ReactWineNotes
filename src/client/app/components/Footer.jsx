@@ -11,7 +11,7 @@ class Footer extends Component {
      return (
     <div>
       <div className="small-12 small-centered text-center">
-          <footer style={mainFooter}>Crafted with <i className="fa fa-heart"></i> by Gabriele Dolfi</footer>
+          <footer className="footer" style={mainFooter}>Crafted with <i className="fa fa-heart"></i> by Gabriele Dolfi</footer>
       </div>
     </div>
     );

@@ -89,18 +89,27 @@ class Fields extends Component {
 			wineVineyard,
 			wineBio } = this.props;
 
-			const selectOptions = this.props.wineType.split(', ');
-			selectOptions.push("White Wines","Rosè Wines", "Red Wines");
-			//if props.winetype exist in array delete it for show the other item
-			for (var i=selectOptions.length-1; i>=0; i--) {
-				if (selectOptions[i] === wineType) {
-					selectOptions.splice(i, 1);
-			   }
-			}
-		    // Generate list of options
-		    const selectOptionsList = selectOptions.map((selectOption, index) => {
-		      return <option key={index} value={selectOption}>{selectOption}</option>
-		    });
+			if(this.props.wineType){
+				var selectOptions = this.props.wineType.split(', ');
+				selectOptions.push("White Wine","Rosè Wine", "Red Wine");
+				//if props.winetype exist in array delete it for show the other item
+				for (var i=selectOptions.length-1; i>=0; i--) {
+					if (selectOptions[i] === wineType) {
+						selectOptions.splice(i, 1);
+				   }
+				}
+
+			    // Generate list of options
+			    var selectOptionsList = selectOptions.map((selectOption, index) => {
+			      return <option key={index} value={selectOption}>{selectOption}</option>
+			    });
+
+				} else {
+					var selectOptions = ["White Wine","Rosè Wine", "Red Wine"];
+					var selectOptionsList = selectOptions.map((selectOption, index) => {
+			      	return <option key={index} value={selectOption}>{selectOption}</option>
+			    });
+			}	   
 
 		return (
 

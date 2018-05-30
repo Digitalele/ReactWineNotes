@@ -36,7 +36,7 @@ class WineMessage extends Component {
 			}
 
 		return (
-			<div className="small-6 small-centered ">		
+			<div className="small-8 medium-8 large-6 small-centered">		
 				<ul className="list-group">
 				<CSSTransitionGroup
 	                          	transitionName="fade"                                                                

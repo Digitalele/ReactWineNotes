@@ -18,6 +18,9 @@ class Nav extends Component {
     }
 
     componentDidMount() {
+      //trigger jquery for responsive menu
+      $(document).foundation();
+
       auth.onAuthStateChanged((user) => {
         if (user) {
         this.setState({ user });
@@ -47,10 +50,34 @@ class Nav extends Component {
 
   render () {
      return (
-     <div className="top-bar-trasp">
+
+     <div>
+
+      <label>
+        <input className="responsive" type="checkbox"/>
+        <span className="responsive-menu">
+          <span className="hamburger"></span>
+        </span>
+        <ul className="responsive">
+          <li>
+            <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Wine</IndexLink>
+          </li>
+          <li>
+            <Link to="/appcrud" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Wines</Link>
+          </li>
+          <li>
+            <Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link>
+          </li>
+          <li>
+            <a href="#">User</a>
+          </li>
+        </ul>
+      </label>
+
+      <div className="top-bar-trasp">
         <div className="top-bar-left">
           <ul className="menu">  
-           <li ><img style={logo} src="public/imgs/grapes.png"/></li>  
+           <li ><img style={logo} className="logo" src="public/imgs/grapes.png"/></li>  
           </ul>    
         </div>
         <div className="top-bar-right">
@@ -70,17 +97,14 @@ class Nav extends Component {
                   </li>       
 
                   {this.state.user ? 
-
                   <span>
                     <li>
                       <Link to="/user" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>User</Link>
                     </li> 
-
                     <li>
                       <button className="button" onClick={this.logout}>Log Out</button>
                     </li>
                   </span>
-
                    :
                    <li>
                     <button className="button" onClick={this.login}>Google Sign In</button>  
@@ -90,12 +114,18 @@ class Nav extends Component {
 
         </div>
      </div>
+
+
+
+    
+
+     </div>
+
     );
   }
 }
 
 const logo = {
-  width: '60px',
   padding: '8px',
   border:'2px solid #FF7B7B',
   borderRadius:'50%',
@@ -103,4 +133,13 @@ const logo = {
 };
 
 export default Nav;
+
+
+
+
+
+
+
+
+
 

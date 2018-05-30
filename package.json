@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -d --watch & webpack-dev-server --progress --colors --port=7777",
+    "dev": "webpack -d --watch & webpack-dev-server --host --colors --port=7777",
     "start": "npm run dev",
     "build": "webpack -p"
   },
@@ -40,3 +40,5 @@
     "webpack": "^2.3.3"
   }
 }
+
+

@@ -84,7 +84,7 @@ class AppCrud extends Component {
             <div>
                 {this.state.user ?  
                     <div>
-                        <h2 className="page-title text-center main-title">{username} Wine List</h2>
+                        <h2 className="page-title text-center main-title">{username} Wines list</h2>
                                  
                         <div className="small-8 small-centered">
 

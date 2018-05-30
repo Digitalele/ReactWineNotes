@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 //var {Link} = require('react-router');
 import LocalStorage from 'LocalStorage'
 import Fields from 'Fields'
-import firebase, { auth, provider } from 'Firebase';
+import firebase, { auth, provider, fb_provider } from 'Firebase';
 
 
 
@@ -11,7 +11,8 @@ class WineFields extends Component {
 	constructor(props) {  
         super(props)
 
-        this.login = this.login.bind(this); 
+        this.login = this.login.bind(this);
+        this.fb_login = this.fb_login.bind(this);   
   		this.logout = this.logout.bind(this); 
 
         this.state = {
@@ -31,6 +32,16 @@ class WineFields extends Component {
 
 	login() {
 	  auth.signInWithPopup(provider) 
+	    .then((result) => {
+	      const user = result.user;
+	      this.setState({
+	        user
+	      });
+	    });
+	}
+
+	fb_login() {
+	  auth.signInWithPopup(fb_provider) 
 	    .then((result) => {
 	      const user = result.user;
 	      this.setState({
@@ -147,28 +158,28 @@ class WineFields extends Component {
 
 		<div className="row">
 
-			<div className="wrapper small-8 large-centered columns">
+			<div className="">
 
 			{this.state.user ?	
 				  	<div>
-				  		<div className="wrapper small-10 large-centered columns">
+				  		<div className="wrapper small-8 medium-8 large-8 large-centered small-centered medium-centered columns">
 					  		<button onClick={this.logout}>{/*Log Out*/}</button>
 					  		<div className="">
-								<h1 className="text-center main-title">
+								<h2 className="text-center main-title">
 									Write down your wine			
-								</h1>					
+								</h2>					
 								{renderForm()}	 
 							</div>	
 						</div>    	
 				  	</div>              
 				:
 
-				   <div className="">
-					   	<h1 className="page-title text-center main-title">You must login for save wines!</h1>
+				   <div className="small-8 medium-8 large-8 large-centered small-centered medium-centered columns">
+					   	<h2 className="page-title text-center main-title">You must login for save wines!</h2>
 
-					   	<div className="small-8 large-centered columns">
+					   	<div className="">
 					   		<button className="button social-btn btn-gg" onClick={this.login}>Google Sign In</button>              
-					   		<button className="button social-btn btn-fb" >Facebook Sign In</button>
+					   		<button className="button social-btn btn-fb" onClick={this.fb_login} >Facebook Sign In</button>
 					   	</div>
 
 					                 

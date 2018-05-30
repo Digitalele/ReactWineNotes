@@ -1,7 +1,7 @@
 var axios = require('axios');
 //http://services.wine.com/api/beta2/service.svc/JSON/catalogsearch=${encodedLocation}&apikey=${KEY}? 
 const WINE_API = 'http://localhost:3000/api/serve/winename/';
-const KEY = '23986de5dd4c2846908b4613ba9d5a6b';
+//const KEY = '23986de5dd4c2846908b4613ba9d5a6b';
 
 module.exports = {
 
