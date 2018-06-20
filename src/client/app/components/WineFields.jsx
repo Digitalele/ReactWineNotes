@@ -175,7 +175,7 @@ class WineFields extends Component {
 				:
 
 				   <div className="small-8 medium-8 large-8 large-centered small-centered medium-centered columns">
-					   	<h2 className="page-title text-center main-title">You must login for save wines!</h2>
+					   	<h2 className="page-title text-center main-title">You must login to save wine!</h2>
 
 					   	<div className="">
 					   		<button className="button social-btn btn-gg" onClick={this.login}>Google Sign In</button>              
